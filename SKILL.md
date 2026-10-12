@@ -51,7 +51,9 @@ For the default rich composition, select 4–5 unequal panels including 1–2 pa
 
 ### 4. Choose reference images
 
-The script passes images to the API in order. Put the **subject photo first** (if any), then 2–3 style refs from `assets/style-refs/` matching the archetype:
+**Never open, view or preview the images in `assets/style-refs/` yourself.** Handle them by file path only. The look is fully described in `style-guide.md`, so you don't need to see them, and viewing them clutters the user's screen with image previews they did not ask for.
+
+Style refs are used only by the bundled script (Option B in step 6), which reads them from disk. It passes images to the API in order: put the **subject photo first** (if any), then 2–3 style refs matching the archetype:
 
 | Archetype | Style refs |
 |---|---|
@@ -62,9 +64,9 @@ The script passes images to the API in order. Put the **subject photo first** (i
 | E main menu | 08-red-menu, 01-characters, 05-title-card |
 | F dialogue | 01-characters, 02-onomatopoeia, 03-space-mecha |
 
-Style refs carry the look far better than words, so always include them, even for text-only subjects.
+With the built-in image tool (Option A), skip this step: send no style refs and rely on the style block.
 
-The style refs and reference files are bundled with this skill and are yours to use: open or attach them directly, without asking the user for permission and without announcing it. Don't tell the user that you looked at the Orbitals originals, which refs you picked, or which files you read — just proceed to the result.
+Don't tell the user which refs you picked or which files you read — just proceed to the result.
 
 ### 5. Write the prompt
 
@@ -74,6 +76,7 @@ Write it in English (image models follow English best), with all on-image text a
 [Image roles]
 Image 1 is the subject to redraw (identity reference only — do not keep its photographic look, lighting or background). Images 2–4 are style references from the game "Orbitals": match their rendering, colour, typography and film texture; do not copy their characters or text.
 (Text-only subject: "All images are style references ..." )
+(No style refs sent, as with the built-in tool: keep only the sentence about Image 1, or drop this section for a text-only subject.)
 
 [Subject]
 <hero: who/what, identity anchors per subject, pose/expression, crop, placement, coverage %>
@@ -103,7 +106,7 @@ Be concrete about positions and sizes — "giant white title spanning 80% of the
 
 Save the prompt and the result under `./orbitals-art/` in the current working directory, with a slug like `cat-cut-in`. Make one image per request unless the user asks for more — generation is slow and costs money.
 
-**Option A — built-in image generation (preferred when available, e.g. Codex).** If the environment gives you an image-generation or image-editing tool, use it directly: send the compiled prompt and attach the subject photo plus the chosen style refs from `SKILL_DIR/assets/style-refs/` if the tool accepts input images. If it doesn't accept images, send the prompt alone — the style block carries the look. Use the tool's closest size to the chosen aspect ratio, then save or copy the result to `./orbitals-art/<slug>.png`.
+**Option A — built-in image generation (preferred when available, e.g. Codex).** If the environment gives you an image-generation or image-editing tool, use it directly: send the compiled prompt, plus the user's subject photo if there is one and the tool accepts input images. Do not open or attach the style refs — the style block carries the look. Use the tool's closest size to the chosen aspect ratio, then save or copy the result to `./orbitals-art/<slug>.png`.
 
 **Option B — bundled script (when there is no built-in tool).** It calls the OpenAI Images API with only the Python standard library:
 
