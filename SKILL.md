@@ -22,6 +22,8 @@ Reference files (read both before writing a prompt):
 
 Use rich, unequal overlapping game-interface panels over a quiet background. Depth should come from scale, occlusion and partial-feature close-ups, not dense environmental detail. Keep the Orbitals cel-anime style throughout; do not use pixel art, desktop menus or signatures.
 
+Default to an inset scene frame over a uniform opaque black outer field, several purposeful foreground frame breaks, and mild fisheye/barrel curvature within the frame. Follow the detailed frame rules in composition.md. Keep the outer black field clean and the central face/anatomy stable. Explicit user framing choices override these defaults.
+
 Bottom dialogue and speaker labels default to natural Japanese; keep user-supplied text verbatim and follow an explicitly requested language instead. This default applies to dialogue, not automatically to every HUD or title.
 
 ### 1. Read the request
@@ -30,7 +32,9 @@ Find:
 - **Subject**: an image path / attached image, or a text description. If there is neither, ask once what the image should be about, then stop.
 - **Optional user choices**: mood (红幕菜单 / 深空极光 / 遗迹森林 / 熔炉 / 金色漩涡 / 跃迁霓虹 / 控制室), layout (章节标题卡 / 角色切入 / 道具获得 / 双人分屏 / 主菜单 / 对话特写), aspect ratio, any title or dialogue text. Use whatever is given verbatim; pick the rest yourself — don't send the user a questionnaire, choosing is part of the job.
 
-Aspect ratio → `--size`: landscape (default, matches the game's 16:9 screens) `1536x1024`; portrait / 9:16 / 3:4 / phone wallpaper `1024x1536`; square `1024x1024`.
+Aspect ratio: default to landscape 16:9 unless specified. Respect exact requested ratios, including 4:3; do not equate 1536x1024 (3:2) with 16:9, or 1024x1536 (2:3) with 3:4 or 9:16. Ask the built-in generator for the target ratio explicitly (e.g. 4:3, ideally 1536x1152). Check actual saved dimensions where available and report any mismatch. The bundled CLI's supported size options are 1536x1024, 1024x1536 and 1024x1024; do not claim an unsupported exact ratio from these sizes.
+
+When changing an existing 16:9 image to 4:3 while retaining all content, expand above and below and reflow panels instead of cropping sides or stretching the subject. Retain subject identity, palette and exact text. The fish-boy test used 4:3; that subject-specific choice does not change the global default or the ratios of other images.
 
 ### 2. Anchor the subject
 
@@ -77,6 +81,9 @@ Image 1 is the subject to redraw (identity reference only — do not keep its ph
 [Scene & layout]
 <archetype layout in concrete positions: what is top-left, centre band, lower third, right edge; frame type (letterbox / split / full-bleed); mood palette with hex colours; calm space>
 
+[Frame & depth]
+<uniform opaque black outer field; inset border geometry; 2–4 subject-relevant features crossing the frame across at least two sides; frame occluded behind them; mild inner-scene fisheye with stable central anatomy and readable text>
+
 [Enrichment & FX]
 <1–3 quiet world details; one localized FX family; 3–6 unequal overlapping panels including 1–2 partial-feature close-ups, each with a subject-relevant function; specify clean negative space and what stays visually subdued>
 
@@ -112,7 +119,7 @@ python3 SKILL_DIR/scripts/generate.py --prompt-file ./orbitals-art/<slug>.txt \
 
 ### 7. Check and deliver
 
-Open the result and compare it with the preflight checklist: is the hero recognisable through its anchors, is it clearly 80s cel anime (not a filtered photo), are unequal interface layers clearly overlapping, is the background calm rather than filled with stars/debris/architecture, is the text legible, and is the bottom dialogue Japanese unless the user requested otherwise?
+Open the result and compare it with the preflight checklist: is the hero recognisable through its anchors, is it clearly 80s cel anime (not a filtered photo), are unequal interface layers clearly overlapping, is the background calm rather than filled with stars/debris/architecture, is the text legible, is the bottom dialogue Japanese unless the user requested otherwise, is the outer field uniformly black, do several foreground features visibly occlude the inset border, and is inner fisheye curvature mild with readable text and coherent anatomy?
 
 Then reply briefly (in the user's language) with:
 - the image path, and the image itself,

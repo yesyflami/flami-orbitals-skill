@@ -19,7 +19,7 @@ Build the frame from back to front:
 | # | Layer | Rule |
 |---|---|---|
 | 1 | **Painted world** | Background scene in the chosen mood palette. Use 1–3 subdued, subject-relevant world details. Prefer broad painted colour fields, a simple ground plane and one low-contrast distant silhouette. Keep the setting readable without filling it with texture. |
-| 2 | **Hero** | Exactly one hero composition — the user's subject, or the anchored group as one unit. Covers **55–75%** of the frame (never below 45% after overlaps). Placed off-centre. Never boxed inside a frame or window. |
+| 2 | **Hero** | Exactly one hero composition — the user's subject, or the anchored group as one unit. Covers **55–75%** of the frame (never below 45% after overlaps). Placed off-centre. Never contained inside a small UI window. The main scene may use an inset frame, with foreground features breaking across its boundary. |
 | 3 | **World enrichment** | 1–3 restrained story details that extend the subject into the game world (see §2). Additional narrative information belongs in functional panels rather than extra floating props. Keep world details smaller and lower-contrast than the hero. |
 | 4 | **FX** | One localized FX family connected to the action. Default to a few purposeful trails or one restrained burst; do not combine all-over speed lines, floating debris, dust sprays and sparkles. |
 | 5 | **Close-up insets** | 1–2 unequal partial-feature cards within a total of 3–6 interface panels (default 4–5). Use retro game frames with corner tabs, cream/navy edges and blue/salmon accents. Each shows a *partial distinctive element* — a reaction face, the signature accessory, a paw, an eye behind glasses. Never a second full copy of the hero. With two insets, give them different sizes and different crops. |
@@ -68,6 +68,16 @@ Choose one. Each names a layout that actually appears in the game.
 - If the result is busy, simplify the background and FX first while retaining the useful window hierarchy. If flat, improve panel size differences, overlap and feature crops before adding objects.
 - Adapt to each image: a pet may use paw/ear details and a route map; an object may use a material detail and a function readout. Do not automatically add a football field, shoe crop, charge gauge or space setting to every subject.
 
+### Inset frame, black surround and controlled fisheye
+
+- Default surround: uniform opaque black (#000000) outside the inner scene frame. No cream mat, coloured wallpaper, stars, noise, gradients or scenery outside it. Only selected foreground overflow elements and a very restrained edge light may interrupt the black. Keep visible black space around those elements.
+- Place a thin, clearly readable double-line or lightly bevelled rounded frame roughly 6–10% inside the outer canvas. Frame lines may use the scene's cream or accent colours; the surround remains black. This is a graphic inner border, not a bulky monitor housing.
+- Make 2–4 meaningful frame breaks across at least two sides, with unequal sizes: one major subject extension plus smaller relevant features such as a hand, fish tail/head, hair tips, leaf branch, prop tip or one panel corner. Choose from the subject rather than adding unrelated objects to fill a quota. For the fish-boy composition, the tail can cross left, the snout/hand right, and a smaller hair or panel edge can cross top.
+- Render those extensions in front of the border: hide the border exactly behind their silhouettes, use a subtle rim or contact shadow for depth, and keep them visibly connected to the source object. No extra limbs, duplicated full subjects, detached parts or repeated fish. Let each extension travel visibly into the black margin while leaving about 2–3% outer safety space, avoiding accidental clipping.
+- Apply mild fisheye/barrel curvature coherently within the scene: gently bowed horizon/panel lines near edges, modest corner compression and restrained central expansion. Keep central face, hands and anatomy natural; make text readable. The canvas and black surround stay flat, and foreground frame-breaking features should remain coherent rather than excessively warped.
+- Preserve the quiet-background rule and unequal interface hierarchy. Achieve depth through occlusion and curvature, not extra debris, machinery or texture. Keep the Japanese subtitle clear of the border and overflow.
+- On aspect-ratio edits, extend/recompose the scene and border together; never stretch the whole raster. For 16:9 to 4:3 without losing side content, add space above/below. Do not silently apply a one-image ratio change to other subjects.
+
 ## 4. Variation axes
 
 Pick one value per axis. If earlier images in this conversation used a value, change at least two of: archetype, hero placement, crop, mood.
@@ -82,10 +92,11 @@ Pick one value per axis. If earlier images in this conversation used a value, ch
 | FX family | speed lines / radial burst / hyperspace streaks / neon beam / sparkle stars / floating debris / cel explosion |
 | inset count | 1 / 2 (unequal sizes and crops) |
 | small text set | dialogue only / dialogue + quest HUD / HUD + buttons + P1P2 / dialogue + counter |
-| frame | full-bleed / letterbox / split-screen |
+| frame | inset scene on black with foreground overflow (default); explicit full-bleed / letterbox / split-screen overrides |
 
 ## 5. Compatibility rules
 
+- The default inset frame wraps any archetype; its internal letterbox or split seam can coexist with the black surround. The hero is unboxed relative to UI panels and can cross the scene border.
 - Archetype fixes some axes: A → letterbox + chapter title; B → onomatopoeia + speed lines/neon beam; C → item title + radial burst; D → split-screen + quest HUD + 2 insets; E → logo + HUD/buttons/P1P2; F → dialogue + reaction close-up or bust.
 - Total text elements ≤ 5. With 2 insets use ≤ 4 text elements so the frame does not clutter.
 - Reaction close-up crop pairs with B or F only; full-body pairs with A, C, D, E.
@@ -103,4 +114,7 @@ Before compiling the prompt, confirm:
 - [ ] 25–35% connected calm space; background and FX are visibly quieter than hero/UI
 - [ ] 3–6 unequal panels with purposeful overlap, including 1–2 distinct partial crops
 - [ ] short natural Japanese bottom dialogue unless user wording/language overrides
+- [ ] uniform black surround; readable inset border; 2–4 coherent frame breaks across multiple sides, outer safety margin preserved
+- [ ] mild inner fisheye, stable central anatomy, legible text, flat outer canvas
+- [ ] target aspect ratio respected; aspect edits preserve side content without stretching
 - [ ] identity anchors (3–5 per subject) carried over; everything else redrawn in the 80s cel style

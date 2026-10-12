@@ -66,9 +66,11 @@ Applied over the whole frame — this is what makes it feel like a capture of a 
 - subtle fine **film grain**, slightly heavier in shadows; never dense speckles, dirt or debris
 - light **chromatic aberration** (red/cyan fringe) on high-contrast edges and text
 - **halation / bloom** around light sources and glowing UI
-- soft **vignette**, very mild CRT barrel softness at corners
+- soft **vignette** and mild coherent fisheye/barrel curvature inside the inset scene; gently bowed edge geometry, stable center. Apply texture and lens treatment inside the frame only, keeping the outer black field uniform.
 - optional **cinematic letterbox** (black bars top and bottom) for cinematic shots
 - slightly faded, warm VHS/film colour response
+
+Default framing uses a thin inset border, uniform opaque black surround, and several subject-relevant foreground features crossing and occluding the border. See composition.md for geometry and limits. Scene palette applies inside the border; black outside it is independent of the selected mood.
 
 ## 5. English style block (paste into every prompt)
 
