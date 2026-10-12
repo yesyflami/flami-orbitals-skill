@@ -1,6 +1,33 @@
-![flami-orbitals-skill](assets/banner.webp)
+<p align="center">
+  <img src="assets/banner.webp" alt="flami-orbitals-skill" width="100%">
+</p>
 
-# flami-orbitals-skill
+<h1 align="center">轨道双子星 · flami-orbitals-skill</h1>
+
+<h3 align="center">让任何主体都成为游戏里的一帧</h3>
+
+<p align="center">
+  把一张照片或一句描述交给 Agent，说一句你想画什么。<br>
+  自动重绘成《轨道双子星 / Orbitals》的 80 年代赛璐璐画风，并配上章节标题、对白字幕、任务 HUD 与特写小窗。
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/VERSION-3.0-E8443A?style=for-the-badge&labelColor=555555" alt="Version 3.0">
+  <img src="https://img.shields.io/badge/CODEX-SKILL-0D1B2A?style=for-the-badge&labelColor=555555" alt="Codex Skill">
+  <img src="https://img.shields.io/badge/CLAUDE%20CODE-SKILL-2563EB?style=for-the-badge&labelColor=555555" alt="Claude Code Skill">
+</p>
+
+<p align="center">
+  <a href="#画面特点">画面特点</a> ·
+  <a href="#安装">安装</a> ·
+  <a href="#使用">使用</a> ·
+  <a href="#出图方式">出图方式</a> ·
+  <a href="#目录">目录</a>
+</p>
+
+---
+
+## 画面特点
 
 把一张照片或一句描述，变成《轨道双子星 / Orbitals》游戏画面风格的插画：80 年代赛璐璐动画画风 + 游戏里的章节标题、拟声词、对话字幕、任务 HUD、头像卡等界面元素。构图采用：一个主体 + 多层叠压的界面元素 + 局部特写小窗 + 围绕主体新增的世界观元素。
 
