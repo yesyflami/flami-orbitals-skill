@@ -1,3 +1,5 @@
+![flami-orbitals-skill](assets/banner.webp)
+
 # flami-orbitals-skill
 
 把一张照片或一句描述，变成《轨道双子星 / Orbitals》游戏画面风格的插画：80 年代赛璐璐动画画风 + 游戏里的章节标题、拟声词、对话字幕、任务 HUD、头像卡等界面元素。构图采用：一个主体 + 多层叠压的界面元素 + 局部特写小窗 + 围绕主体新增的世界观元素。
