@@ -24,6 +24,8 @@ Use rich, unequal overlapping game-interface panels over a quiet background. Dep
 
 Default to an inset scene frame over a uniform opaque black outer field, several purposeful foreground frame breaks, and mild fisheye/barrel curvature within the frame. Follow the detailed frame rules in composition.md. Keep the outer black field clean and the central face/anatomy stable. Explicit user framing choices override these defaults.
 
+Default setting: outer space. Unless the user names another setting or mood, stage the subject in a space scene — open deep space, low orbit above a planet, a station exterior or viewport, or a small planet's surface under a starry sky — and translate the subject's own world into it (a kitchen becomes a galley module, a street becomes a station corridor with a window to the stars). Keep it quiet: sparse stars, one soft nebula or aurora band, or one simplified planet, never a dense starfield. Prefer the space-compatible moods (深空极光, 跃迁霓虹, 金色漩涡); other moods still work when space stays visible.
+
 Bottom dialogue and speaker labels default to natural Japanese; keep user-supplied text verbatim and follow an explicitly requested language instead. This default applies to dialogue, not automatically to every HUD or title.
 
 ### 1. Read the request
@@ -32,9 +34,9 @@ Find:
 - **Subject**: an image path / attached image, or a text description. If there is neither, ask once what the image should be about, then stop.
 - **Optional user choices**: mood (红幕菜单 / 深空极光 / 遗迹森林 / 熔炉 / 金色漩涡 / 跃迁霓虹 / 控制室), layout (章节标题卡 / 角色切入 / 道具获得 / 双人分屏 / 主菜单 / 对话特写), aspect ratio, any title or dialogue text. Use whatever is given verbatim; pick the rest yourself — don't send the user a questionnaire, choosing is part of the job.
 
-Aspect ratio: default to landscape 16:9 unless specified. Respect exact requested ratios, including 4:3; do not equate 1536x1024 (3:2) with 16:9, or 1024x1536 (2:3) with 3:4 or 9:16. Ask the built-in generator for the target ratio explicitly (e.g. 4:3, ideally 1536x1152). Check actual saved dimensions where available and report any mismatch. The bundled CLI's supported size options are 1536x1024, 1024x1536 and 1024x1024; do not claim an unsupported exact ratio from these sizes.
+Aspect ratio: default to landscape 4:3 unless specified. Respect exact requested ratios; do not equate 1536x1024 (3:2) with 16:9, or 1024x1536 (2:3) with 3:4 or 9:16. Ask the built-in generator for the target ratio explicitly (for the default: 4:3, ideally 1536x1152). Check actual saved dimensions where available and report any mismatch. The bundled CLI's supported size options are 1536x1024, 1024x1536 and 1024x1024; none is exactly 4:3, so for the default use 1536x1024 (3:2, the closest landscape size) and say so instead of calling it 4:3.
 
-When changing an existing 16:9 image to 4:3 while retaining all content, expand above and below and reflow panels instead of cropping sides or stretching the subject. Retain subject identity, palette and exact text. The fish-boy test used 4:3; that subject-specific choice does not change the global default or the ratios of other images.
+When changing an existing 16:9 image to 4:3 while retaining all content, expand above and below and reflow panels instead of cropping sides or stretching the subject. Retain subject identity, palette and exact text. A ratio the user requests for one image applies to that image only; later images go back to the 4:3 default.
 
 ### 2. Anchor the subject
 
@@ -122,7 +124,7 @@ python3 SKILL_DIR/scripts/generate.py --prompt-file ./orbitals-art/<slug>.txt \
 
 ### 7. Check and deliver
 
-Open the result and compare it with the preflight checklist: is the hero recognisable through its anchors, is it clearly 80s cel anime (not a filtered photo), are unequal interface layers clearly overlapping, is the background calm rather than filled with stars/debris/architecture, is the text legible, is the bottom dialogue Japanese unless the user requested otherwise, is the outer field uniformly black, do several foreground features visibly occlude the inset border, and is inner fisheye curvature mild with readable text and coherent anatomy?
+Open the result and compare it with the preflight checklist: is the hero recognisable through its anchors, is it clearly 80s cel anime (not a filtered photo), are unequal interface layers clearly overlapping, is the scene set in space (unless the user chose another setting), is the background calm rather than filled with stars/debris/architecture, is the image 4:3 (unless another ratio was requested), is the text legible, is the bottom dialogue Japanese unless the user requested otherwise, is the outer field uniformly black, do several foreground features visibly occlude the inset border, and is inner fisheye curvature mild with readable text and coherent anatomy?
 
 Then reply briefly (in the user's language) with:
 - the image path, and the image itself,
