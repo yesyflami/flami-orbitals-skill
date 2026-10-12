@@ -1,9 +1,9 @@
 ---
-name: flami-orbitals-ui
+name: flami-orbitals-skill
 description: Turn a photo or a described subject into a "轨道双子星 / Orbitals" game-screen illustration — late-1980s Japanese cel-anime characters, painted sci-fi backgrounds, faded film grain, plus the game's typography (giant white Japanese chapter titles, manga onomatopoeia, yellow dialogue subtitles, quest HUD, portrait cards) — and generate it with the built-in image tool or the OpenAI Images API. Use this whenever the user mentions 轨道双子星, Orbitals, オービタルズ, or asks for an 80s/昭和 anime, retro cel-anime, 复古赛璐璐, 老动画, or "game screenshot" style image of a person, pet, object or scene, even if they don't name the game. It enriches the composition with story elements, not just a style filter.
 ---
 
-# flami-orbitals-ui — 轨道双子星 (Orbitals) image skill
+# flami-orbitals-skill — 轨道双子星 (Orbitals) image skill
 
 All paths below are relative to the directory containing this SKILL.md (call it `SKILL_DIR`).
 

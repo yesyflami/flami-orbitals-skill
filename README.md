@@ -1,4 +1,4 @@
-# flami-orbitals-ui
+# flami-orbitals-skill
 
 把一张照片或一句描述，变成《轨道双子星 / Orbitals》游戏画面风格的插画：80 年代赛璐璐动画画风 + 游戏里的章节标题、拟声词、对话字幕、任务 HUD、头像卡等界面元素。构图采用：一个主体 + 多层叠压的界面元素 + 局部特写小窗 + 围绕主体新增的世界观元素。
 
@@ -8,19 +8,19 @@
 
 ## 安装
 
-本地 ZIP 安装：解压后将完整的 `flami-orbitals-ui` 文件夹放入 `~/.codex/skills/`（Codex）或 `~/.claude/skills/`（Claude Code）。可直接修改本地文件并重新打包，无需 Git 提交。
+本地 ZIP 安装：解压后将完整的 `flami-orbitals-skill` 文件夹放入 `~/.codex/skills/`（Codex）或 `~/.claude/skills/`（Claude Code）。可直接修改本地文件并重新打包，无需 Git 提交。
 
 
 **Codex**
 
 ```bash
-git clone https://github.com/yesyflami/flami-orbitals-ui.git ~/.codex/skills/flami-orbitals-ui
+git clone https://github.com/yesyflami/flami-orbitals-skill.git ~/.codex/skills/flami-orbitals-skill
 ```
 
 **Claude Code**
 
 ```bash
-git clone https://github.com/yesyflami/flami-orbitals-ui.git ~/.claude/skills/flami-orbitals-ui
+git clone https://github.com/yesyflami/flami-orbitals-skill.git ~/.claude/skills/flami-orbitals-skill
 ```
 
 ## 使用
