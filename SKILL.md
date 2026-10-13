@@ -42,17 +42,17 @@ Generation is slow and costs money, so check the few things you cannot guess bef
 
 1. **气质 Vibe** — how the subject should feel: 帅气 / 可爱 / 搞笑 / 热血 / 忧郁 / 你定.
 2. **故事 Story** — what is happening in the frame: 出发探险 / 获得道具 / 战斗瞬间 / 日常休息 / 你定. Offer options that fit the subject rather than this fixed list.
-3. **文字 Text** — who writes the title and the dialogue line: the user (ask them to type it) / 你定.
-4. **主角 Hero** — only when the source image has several people or subjects: who is the hero.
+3. **主角 Hero** — only when the source image has several people or subjects: who is the hero.
 
-**Round 2 — only if Round 1 left something you still cannot proceed without**, for example the user chose to write the text but did not give it, or two answers contradict each other. Ask just those items, in one message.
+**Round 2 — only if Round 1 left something you still cannot proceed without**, for example two answers contradict each other, or an answer is too vague to build a scene from. Ask just those items, in one message.
 
 Rules:
 - Never ask a third round. Whatever is still open after Round 2, decide yourself.
 - Skip a question when the request already answers it ("帅气的橘猫" answers Vibe).
 - If every question is already answered, or the user says "直接画", "随便", "你定" or similar, ask nothing and generate.
 - "你定", a blank or a skipped item means you choose; do not ask about it again.
-- Do not ask about layout, mood palette, setting, inset contents or aspect ratio. Derive them from the answers and the defaults; use them only if the user volunteers them.
+- Do not ask about on-image text. Write the title, HUD and dialogue yourself using the default text rules above (Japanese dialogue and speaker label); change the wording or language only when the user specifies it.
+- Do not ask about layout, mood palette, setting, inset contents or aspect ratio either. Derive them from the answers and the defaults; use them only if the user volunteers them.
 - Questions apply to a new image. For a tweak or regeneration of the image you just made, apply the change without re-asking.
 
 Aspect ratio: default to landscape 4:3 unless specified. Respect exact requested ratios; do not equate 1536x1024 (3:2) with 16:9, or 1024x1536 (2:3) with 3:4 or 9:16. Ask the built-in generator for the target ratio explicitly (for the default: 4:3, ideally 1536x1152). Check actual saved dimensions where available and report any mismatch. The bundled CLI's supported size options are 1536x1024, 1024x1536 and 1024x1024; none is exactly 4:3, so for the default use 1536x1024 (3:2, the closest landscape size) and say so instead of calling it 4:3.
