@@ -111,7 +111,9 @@ Image 1 is the subject to redraw (identity reference only — do not keep its ph
 <archetype layout in concrete positions: what is top-left, centre band, lower third, right edge; frame type (letterbox / split / full-bleed); mood palette with hex colours; calm space>
 
 [Frame & depth]
-<uniform opaque black outer field; main frame and panel border sizes matched to assets/frame-size-reference.png using composition.md measurements; 2–4 subject-relevant features crossing the frame across at least two sides; frame occluded behind them; mild inner-scene fisheye with stable central anatomy and readable text>
+Paste these three sentences unchanged, then add the specifics below them:
+"The picture is a rounded-rectangle framed scene mounted on a plain pure-black canvas. The frame is centered and covers only about 87% of the canvas width and 86% of the canvas height, so a wide, clearly visible pure-black border of at least 6% of the canvas remains on all four sides — a generous black mat, never a thin bezel, and the frame must not reach the canvas edges. Parts of the subject break out of the frame and extend far into the black border, almost reaching the canvas edge, overlapping and hiding the frame line where they cross it."
+<name each overflow and its side: the one major extension (which body part or object, which side, 5–8% out), the one or two secondary extensions on other sides (3–5% out), and the title or panel corner that crosses the frame; panel border sizes matched to assets/frame-size-reference.png using composition.md measurements; mild inner-scene fisheye with stable central anatomy and readable text>
 
 [Enrichment & FX]
 <1–3 quiet world details; one localized FX family; 3–6 unequal overlapping panels including 1–2 partial-feature close-ups, each with a subject-relevant function; specify clean negative space and what stays visually subdued>
@@ -148,12 +150,12 @@ python3 SKILL_DIR/scripts/generate.py --prompt-file ./orbitals-art/<slug>.txt \
 
 ### 7. Check and deliver
 
-Open the result and compare it with the preflight checklist: is the hero recognisable through its anchors, is it clearly 80s cel anime (not a filtered photo), are unequal interface layers clearly overlapping, is the scene set in space (unless the user chose another setting), is the background calm rather than filled with stars/debris/architecture, is the image 4:3 (unless another ratio was requested), is the text legible, is the bottom dialogue Japanese unless the user requested otherwise, is the outer field uniformly black, do several foreground features visibly occlude the inset border, and is inner fisheye curvature mild with readable text and coherent anatomy?
+Open the result and compare it with the preflight checklist: is the hero recognisable through its anchors, is it clearly 80s cel anime (not a filtered photo), are unequal interface layers clearly overlapping, is the scene set in space (unless the user chose another setting), is the background calm rather than filled with stars/debris/architecture, is the image 4:3 (unless another ratio was requested), is the text legible, is the bottom dialogue Japanese unless the user requested otherwise, is the outer field uniformly black, is there a wide black border on all four sides (at least 6% of the canvas; the frame no more than 88% wide and 87% tall), does one large part of the subject extend most of the way across that border with one or two smaller extensions on other sides, do they visibly occlude the inset border, and is inner fisheye curvature mild with readable text and coherent anatomy?
 
 Then reply briefly (in the user's language) with:
 - the image path, and the image itself,
 - one line on the scene concept (chapter / mission / layout / mood) so the user knows what was intended,
-- any visible flaw worth fixing (e.g. garbled text, a missing element), with an offer to regenerate with a tweak.
+- any visible flaw worth fixing (e.g. garbled text, a missing element), with an offer to regenerate with a tweak. A frame that nearly fills the canvas, a thin black border, or overflow limited to a fingertip or hair tips counts as a flaw: always name it.
 
 Leave out process notes: no mention of the style refs, reference files or steps you went through.
 
