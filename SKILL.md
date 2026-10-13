@@ -22,7 +22,7 @@ Reference files (read both before writing a prompt):
 
 Use rich, unequal overlapping game-interface panels over a quiet background. Depth should come from scale, occlusion and partial-feature close-ups, not dense environmental detail. Keep the Orbitals cel-anime style throughout; do not use pixel art, desktop menus or signatures.
 
-Default to an inset scene frame over a uniform opaque black outer field, several purposeful foreground frame breaks, and mild fisheye/barrel curvature within the frame. Follow the detailed frame rules in composition.md. Keep the outer black field clean and the central face/anatomy stable. Explicit user framing choices override these defaults.
+Default to an inset scene frame over a uniform opaque black outer field, several purposeful foreground frame breaks, and mild fisheye/barrel curvature within the frame. Use `assets/frame-size-reference.png` as the visual size reference for the main frame and all inset-panel borders; follow the normalized measurements in `references/composition.md`. Open this image and attach it to generation as a geometry-only reference. Do not copy its boy, fish, text, palette or background into unrelated subjects. Keep the outer black field clean and the central face/anatomy stable. Explicit user framing choices override these defaults.
 
 Default setting: outer space. Unless the user names another setting or mood, stage the subject in a space scene — open deep space, low orbit above a planet, a station exterior or viewport, or a small planet's surface under a starry sky — and translate the subject's own world into it (a kitchen becomes a galley module, a street becomes a station corridor with a window to the stars). Keep it quiet: sparse stars, one soft nebula or aurora band, or one simplified planet, never a dense starfield. Prefer the space-compatible moods (深空极光, 跃迁霓虹, 金色漩涡); other moods still work when space stays visible.
 
@@ -53,7 +53,7 @@ For the default rich composition, select 4–5 unequal panels including 1–2 pa
 
 ### 4. Choose reference images
 
-**Never open, view or preview the images in `assets/style-refs/` yourself.** Handle them by file path only. The look is fully described in `style-guide.md`, so you don't need to see them, and viewing them clutters the user's screen with image previews they did not ask for.
+**Never open, view or preview the images in `assets/style-refs/` yourself.** Handle them by file path only. (The one bundled image you do open is `assets/frame-size-reference.png`, for frame geometry.) The look is fully described in `style-guide.md`, so you don't need to see them, and viewing them clutters the user's screen with image previews they did not ask for.
 
 Style refs are used only by the bundled script (Option B in step 6), which reads them from disk. It passes images to the API in order: put the **subject photo first** (if any), then 2–3 style refs matching the archetype:
 
@@ -67,6 +67,8 @@ Style refs are used only by the bundled script (Option B in step 6), which reads
 | F dialogue | 01-characters, 02-onomatopoeia, 03-space-mecha |
 
 With the built-in image tool (Option A), skip this step: send no style refs and rely on the style block.
+
+In both options, add `assets/frame-size-reference.png` as the last image and name its role in the prompt ("the last image is a geometry-only reference for frame and panel sizes; do not copy its subject, text or colours").
 
 Don't tell the user which refs you picked or which files you read — just proceed to the result.
 
@@ -87,7 +89,7 @@ Image 1 is the subject to redraw (identity reference only — do not keep its ph
 <archetype layout in concrete positions: what is top-left, centre band, lower third, right edge; frame type (letterbox / split / full-bleed); mood palette with hex colours; calm space>
 
 [Frame & depth]
-<uniform opaque black outer field; inset border geometry; 2–4 subject-relevant features crossing the frame across at least two sides; frame occluded behind them; mild inner-scene fisheye with stable central anatomy and readable text>
+<uniform opaque black outer field; main frame and panel border sizes matched to assets/frame-size-reference.png using composition.md measurements; 2–4 subject-relevant features crossing the frame across at least two sides; frame occluded behind them; mild inner-scene fisheye with stable central anatomy and readable text>
 
 [Enrichment & FX]
 <1–3 quiet world details; one localized FX family; 3–6 unequal overlapping panels including 1–2 partial-feature close-ups, each with a subject-relevant function; specify clean negative space and what stays visually subdued>
@@ -108,7 +110,7 @@ Be concrete about positions and sizes — "giant white title spanning 80% of the
 
 Save the prompt and the result under `./orbitals-art/` in the current working directory, with a slug like `cat-cut-in`. Make one image per request unless the user asks for more — generation is slow and costs money.
 
-**Option A — built-in image generation (preferred when available, e.g. Codex).** If the environment gives you an image-generation or image-editing tool, use it directly: send the compiled prompt, plus the user's subject photo if there is one and the tool accepts input images. Do not open or attach the style refs — the style block carries the look. Use the tool's closest size to the chosen aspect ratio, then save or copy the result to `./orbitals-art/<slug>.png`.
+**Option A — built-in image generation (preferred when available, e.g. Codex).** If the environment gives you an image-generation or image-editing tool, use it directly: send the compiled prompt, plus the user's subject photo if there is one and the tool accepts input images. Also attach `SKILL_DIR/assets/frame-size-reference.png` as the geometry reference. Do not open or attach the style refs — the style block carries the look. Use the tool's closest size to the chosen aspect ratio, then save or copy the result to `./orbitals-art/<slug>.png`.
 
 **Option B — bundled script (when there is no built-in tool).** It calls the OpenAI Images API with only the Python standard library:
 
