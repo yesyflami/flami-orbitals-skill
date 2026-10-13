@@ -44,18 +44,18 @@ Generation is slow and costs money, so check the few things you cannot guess bef
    - 3:4 竖版
    - 自定义：the user types any ratio or pixel size, e.g. 1:1, 9:16, 21:9, 1920x1080
 2. **风格 Style**
-   - 王牌登场
-   - 热血出击
-   - 深空漫游
+   - 失重浪漫
+   - 宿命对决
+   - 破晓启航
    - 你定
 
 Show the style names only; do not explain them unless asked. What each one means for the picture:
 
 | Style | Feel | Pose & expression | Preferred archetype | Mood palette | FX & type | Dialogue tone |
 |---|---|---|---|---|---|---|
-| 王牌登场 | cool, composed, confident — the ace arriving | steady stance or slow turn toward camera, low camera angle, sharp narrowed eyes, faint smile or none | A chapter card, E main menu | 深空极光, 红幕菜单 | one restrained rim light or lens flare; big clean title | short, calm, self-assured |
-| 热血出击 | hot-blooded, all-out action | lunging, leaping or striking toward camera, strong foreshortening, open-mouthed shout, clenched fist | B cut-in, C item get | 熔炉, 跃迁霓虹 | localized speed lines or one burst; big onomatopoeia | a shouted line ending in ！ |
-| 深空漫游 | quiet, weightless, a little lonely and nostalgic | drifting or floating, relaxed limbs, gaze away from camera toward a distant light | A chapter card, F dialogue | 深空极光, 金色漩涡 | almost no FX, a few slow drifting particles; soft title | a quiet thought, may end in … |
+| 失重浪漫 | tender, dreamy, weightless — a quiet moment shared in zero gravity | floating with relaxed limbs, hair and clothes drifting; soft eyes, a small smile; two subjects reach toward or look at each other, a single subject reaches toward a distant light or a cherished object | A chapter card, F dialogue | 深空极光, 金色漩涡 | almost no FX, a few slow drifting particles or one soft aurora band; gentle title | a quiet, heartfelt line, may end in … |
+| 宿命对决 | tense, dramatic, fated — the instant before the clash | braced, squared-off stance, low camera angle, sharp narrowed eyes, set jaw; two subjects face each other across the frame, a single subject faces a looming rival silhouette or its own mirrored shadow | D split screen, B cut-in | 红幕菜单, 跃迁霓虹, with a strong red-versus-blue split | one hard light seam or beam between the two sides, localized speed lines; heavy title or onomatopoeia | a short challenge or vow ending in ！ |
+| 破晓启航 | bright, hopeful, setting out — the first light of a new journey | stepping or leaning forward, chin up, open smile or determined look toward the horizon; a ship, pod or gateway ready behind | A chapter card, C item get | 金色漩涡, 深空极光 warmed by a sunrise over a planet's rim | one warm sunrise burst or long light rays from the horizon; clean uplifting title | a cheerful call to set off, ending in ！ |
 
 Whatever the style, the subject's identity anchors and the framing rules stay the same. "你定" means pick the style that best suits the subject.
 
