@@ -36,24 +36,44 @@ Find:
 
 #### Ask before generating (at most two rounds)
 
-Generation is slow and costs money, so check the few things you cannot guess before you start. Ask in the user's language, in one message per round, as a short numbered list. Every question offers 3–5 concrete options and ends with "你定" (you decide).
+Generation is slow and costs money, so check the few things you cannot guess before you start. Ask in the user's language, in one message per round, as a short numbered list. **Round 1 — always these two questions, in this order, with these options.** Leave out a question only when the request already answers it.
 
-**Round 1 — ask only the questions the request has not already answered:**
+1. **尺寸 Size**
+   - 4:3 横版（默认）
+   - 16:9 宽屏
+   - 3:4 竖版
+   - 自定义：the user types any ratio or pixel size, e.g. 1:1, 9:16, 21:9, 1920x1080
+2. **风格 Style**
+   - 王牌登场
+   - 热血出击
+   - 深空漫游
+   - 你定
 
-1. **气质 Vibe** — how the subject should feel: 帅气 / 可爱 / 搞笑 / 热血 / 忧郁 / 你定.
-2. **故事 Story** — what is happening in the frame: 出发探险 / 获得道具 / 战斗瞬间 / 日常休息 / 你定. Offer options that fit the subject rather than this fixed list.
-3. **主角 Hero** — only when the source image has several people or subjects: who is the hero.
+Show the style names only; do not explain them unless asked. What each one means for the picture:
 
-**Round 2 — only if Round 1 left something you still cannot proceed without**, for example two answers contradict each other, or an answer is too vague to build a scene from. Ask just those items, in one message.
+| Style | Feel | Pose & expression | Preferred archetype | Mood palette | FX & type | Dialogue tone |
+|---|---|---|---|---|---|---|
+| 王牌登场 | cool, composed, confident — the ace arriving | steady stance or slow turn toward camera, low camera angle, sharp narrowed eyes, faint smile or none | A chapter card, E main menu | 深空极光, 红幕菜单 | one restrained rim light or lens flare; big clean title | short, calm, self-assured |
+| 热血出击 | hot-blooded, all-out action | lunging, leaping or striking toward camera, strong foreshortening, open-mouthed shout, clenched fist | B cut-in, C item get | 熔炉, 跃迁霓虹 | localized speed lines or one burst; big onomatopoeia | a shouted line ending in ！ |
+| 深空漫游 | quiet, weightless, a little lonely and nostalgic | drifting or floating, relaxed limbs, gaze away from camera toward a distant light | A chapter card, F dialogue | 深空极光, 金色漩涡 | almost no FX, a few slow drifting particles; soft title | a quiet thought, may end in … |
+
+Whatever the style, the subject's identity anchors and the framing rules stay the same. "你定" means pick the style that best suits the subject.
+
+**Round 2 — only if Round 1 left something you still cannot proceed without**, for example a custom size you cannot interpret. Ask just that, in one message.
 
 Rules:
 - Never ask a third round. Whatever is still open after Round 2, decide yourself.
-- Skip a question when the request already answers it ("帅气的橘猫" answers Vibe).
+- Skip a question when the request already answers it ("画一张 16:9 的" answers Size).
+- Do not ask about the story, or who the hero is. Invent the story from the subject and the chosen style; with several people or subjects, treat them as one hero group unless the user singles one out.
 - If every question is already answered, or the user says "直接画", "随便", "你定" or similar, ask nothing and generate.
 - "你定", a blank or a skipped item means you choose; do not ask about it again.
 - Do not ask about on-image text. Write the title, HUD and dialogue yourself using the default text rules above (Japanese dialogue and speaker label); change the wording or language only when the user specifies it.
-- Do not ask about layout, mood palette, setting, inset contents or aspect ratio either. Derive them from the answers and the defaults; use them only if the user volunteers them.
+- Do not ask about layout, mood palette, setting or inset contents either. Derive them from the chosen style and the defaults; use them only if the user volunteers them.
 - Questions apply to a new image. For a tweak or regeneration of the image you just made, apply the change without re-asking.
+
+Target sizes for the built-in generator: 4:3 → 1536x1152; 16:9 → 1536x864; 3:4 → 1152x1536; a custom ratio → the same pixel budget at that ratio, longer side about 1536; a custom pixel size → exactly as given if the tool allows it, otherwise the closest size at the same ratio.
+
+The black border keeps the same proportions at every size: an equal-thickness band on all four sides, 7–8% of the canvas's shorter side (see composition.md). Never widen, thin or drop it because the canvas is wider, taller or square.
 
 Aspect ratio: default to landscape 4:3 unless specified. Respect exact requested ratios; do not equate 1536x1024 (3:2) with 16:9, or 1024x1536 (2:3) with 3:4 or 9:16. Ask the built-in generator for the target ratio explicitly (for the default: 4:3, ideally 1536x1152). Check actual saved dimensions where available and report any mismatch. The bundled CLI's supported size options are 1536x1024, 1024x1536 and 1024x1024; none is exactly 4:3, so for the default use 1536x1024 (3:2, the closest landscape size) and say so instead of calling it 4:3.
 
@@ -66,7 +86,7 @@ If there is a source image, look at it once and note **3–5 identity anchors pe
 ### 3. Build the scene concept and recipe
 
 Follow `composition.md` §2–§5:
-- Build on the user's answers: the Vibe sets pose, expression and mood palette; the Story sets the archetype, title and panel contents.
+- Build on the chosen style: take pose, expression, archetype, mood palette, FX and dialogue tone from its row in the style table (step 1), then invent a story that fits both the style and the subject.
 - Invent the mini-story: chapter title (JP + CN), mission HUD, one short Japanese dialogue line, and 1–3 restrained subject-specific world details. Functional interface panels may carry additional story details.
 - Pick one value per variation axis. Fit the archetype to the subject (a dramatic pet → cut-in; an object → item-get; two people → split-screen; a portrait → main-menu or dialogue). If you already made images in this conversation, change at least two high-impact axes so outputs don't repeat.
 - Run the preflight checklist.
@@ -111,9 +131,9 @@ Image 1 is the subject to redraw (identity reference only — do not keep its ph
 <archetype layout in concrete positions: what is top-left, centre band, lower third, right edge; frame type (letterbox / split / full-bleed); mood palette with hex colours; calm space>
 
 [Frame & depth]
-Paste these three sentences unchanged, then add the specifics below them:
-"The picture is a rounded-rectangle framed scene mounted on a plain pure-black canvas. The frame is centered and covers only about 87% of the canvas width and 86% of the canvas height, so a wide, clearly visible pure-black border of at least 6% of the canvas remains on all four sides — a generous black mat, never a thin bezel, and the frame must not reach the canvas edges. Parts of the subject break out of the frame and extend far into the black border, almost reaching the canvas edge, overlapping and hiding the frame line where they cross it."
-<name each overflow and its side: the one major extension (which body part or object, which side, 5–8% out), the one or two secondary extensions on other sides (3–5% out), and the title or panel corner that crosses the frame; panel border sizes matched to assets/frame-size-reference.png using composition.md measurements; mild inner-scene fisheye with stable central anatomy and readable text>
+Paste these three sentences, filling in the band and frame pixel sizes for the chosen canvas from the table in composition.md, then add the specifics below them:
+"The picture is a rounded-rectangle framed scene mounted on a plain pure-black canvas. The frame is centered, and a wide, clearly visible pure-black border of equal thickness — about <band> px, 7–8% of the canvas's shorter side — remains on all four sides, leaving a frame of about <frame W>x<frame H> px: a generous black mat, never a thin bezel, and the frame must not reach the canvas edges. Parts of the subject break out of the frame and extend far into the black border, almost reaching the canvas edge, overlapping and hiding the frame line where they cross it."
+<name each overflow and its side: the one major extension (which body part or object, which side, crossing 70–100% of the black band), the one or two secondary extensions on other sides (40–60% of the band), and the title or panel corner that crosses the frame; panel border sizes matched to assets/frame-size-reference.png using composition.md measurements; mild inner-scene fisheye with stable central anatomy and readable text>
 
 [Enrichment & FX]
 <1–3 quiet world details; one localized FX family; 3–6 unequal overlapping panels including 1–2 partial-feature close-ups, each with a subject-relevant function; specify clean negative space and what stays visually subdued>
@@ -150,7 +170,7 @@ python3 SKILL_DIR/scripts/generate.py --prompt-file ./orbitals-art/<slug>.txt \
 
 ### 7. Check and deliver
 
-Open the result and compare it with the preflight checklist: is the hero recognisable through its anchors, is it clearly 80s cel anime (not a filtered photo), are unequal interface layers clearly overlapping, is the scene set in space (unless the user chose another setting), is the background calm rather than filled with stars/debris/architecture, is the image 4:3 (unless another ratio was requested), is the text legible, is the bottom dialogue Japanese unless the user requested otherwise, is the outer field uniformly black, is there a wide black border on all four sides (at least 6% of the canvas; the frame no more than 88% wide and 87% tall), does one large part of the subject extend most of the way across that border with one or two smaller extensions on other sides, do they visibly occlude the inset border, and is inner fisheye curvature mild with readable text and coherent anatomy?
+Open the result and compare it with the preflight checklist: is the hero recognisable through its anchors, is it clearly 80s cel anime (not a filtered photo), are unequal interface layers clearly overlapping, is the scene set in space (unless the user chose another setting), is the background calm rather than filled with stars/debris/architecture, does the image match the size the user chose, is the text legible, is the bottom dialogue Japanese unless the user requested otherwise, is the outer field uniformly black, is there a wide black border of equal thickness on all four sides (7–8% of the shorter side, whatever the aspect ratio), does one large part of the subject extend most of the way across that border with one or two smaller extensions on other sides, do they visibly occlude the inset border, and is inner fisheye curvature mild with readable text and coherent anatomy?
 
 Then reply briefly (in the user's language) with:
 - the image path, and the image itself,
