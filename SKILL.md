@@ -38,7 +38,7 @@ Find:
 
 Generation is slow and costs money, so check the few things you cannot guess before you start. Ask in the user's language.
 
-**Ask through the environment's question tool, not as chat text.** Use the interactive question/choice tool your environment provides (for example `AskUserQuestion` in Claude Code, or the equivalent user-input / question-card tool in Codex), putting both questions in a single call so the user answers by clicking. Use each option's text below as the option label, and rely on the tool's own free-text or "Other" entry for the custom size. Only if no such tool exists, fall back to one short chat message with the same numbered options. One call (or message) is one round.
+**Ask through the environment's question tool, not as chat text.** Use the interactive question/choice tool your environment provides (for example `AskUserQuestion` in Claude Code, or the equivalent user-input / question-card tool in Codex), putting both questions in a single call so the user answers by clicking. Use each option's text below as the option label. In both questions the last option, 自定义, is the tool's own free-text or "Other" entry: do not add a separate "你定" or "自定义" button next to it. Only if no such tool exists, fall back to one short chat message with the same numbered options. One call (or message) is one round.
 
 **Round 1 — always these two questions, in this order, with these options.** Leave out a question only when the request already answers it.
 
@@ -51,7 +51,7 @@ Generation is slow and costs money, so check the few things you cannot guess bef
    - 失重浪漫（温柔梦幻，漂浮中的安静一刻）
    - 宿命对决（紧张对峙，交锋前的一瞬）
    - 破晓启航（明亮有希望，迎着第一道光出发）
-   - 你定（按主体挑最合适的）
+   - 自定义（自己输入想要的风格）：the user types any style in their own words, e.g. 慵懒午后、赛博朋克、王牌登场
 
 Show each style with its bracketed description exactly as written above. What each one means for the picture:
 
@@ -61,7 +61,7 @@ Show each style with its bracketed description exactly as written above. What ea
 | 宿命对决 | tense, dramatic, fated — the instant before the clash | braced, squared-off stance, low camera angle, sharp narrowed eyes, set jaw; two subjects face each other across the frame, a single subject faces a looming rival silhouette or its own mirrored shadow | D split screen, B cut-in | 红幕菜单, 跃迁霓虹, with a strong red-versus-blue split | one hard light seam or beam between the two sides, localized speed lines; heavy title or onomatopoeia | a short challenge or vow ending in ！ |
 | 破晓启航 | bright, hopeful, setting out — the first light of a new journey | stepping or leaning forward, chin up, open smile or determined look toward the horizon; a ship, pod or gateway ready behind | A chapter card, C item get | 金色漩涡, 深空极光 warmed by a sunrise over a planet's rim | one warm sunrise burst or long light rays from the horizon; clean uplifting title | a cheerful call to set off, ending in ！ |
 
-Whatever the style, the subject's identity anchors and the framing rules stay the same. "你定" means pick the style that best suits the subject.
+Whatever the style, the subject's identity anchors and the framing rules stay the same. For a custom style, work out its own row — feel, pose and expression, archetype, mood palette, FX and dialogue tone — from the user's words, in the same spirit as the three presets. If the custom entry is left empty, or says "你定" or "随便", pick the preset that best suits the subject.
 
 **Round 2 — only if Round 1 left something you still cannot proceed without**, for example a custom size you cannot interpret. Ask just that, in one message.
 
@@ -70,7 +70,7 @@ Rules:
 - Skip a question when the request already answers it ("画一张 16:9 的" answers Size).
 - Do not ask about the story, or who the hero is. Invent the story from the subject and the chosen style; with several people or subjects, treat them as one hero group unless the user singles one out.
 - If every question is already answered, or the user says "直接画", "随便", "你定" or similar, ask nothing and generate.
-- "你定", a blank or a skipped item means you choose; do not ask about it again.
+- A blank or skipped item, or an answer like "你定", means you choose; do not ask about it again.
 - Do not ask about on-image text. Write the title, HUD and dialogue yourself using the default text rules above (Japanese dialogue and speaker label); change the wording or language only when the user specifies it.
 - Do not ask about layout, mood palette, setting or inset contents either. Derive them from the chosen style and the defaults; use them only if the user volunteers them.
 - Questions apply to a new image. For a tweak or regeneration of the image you just made, apply the change without re-asking.
