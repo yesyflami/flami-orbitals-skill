@@ -15,6 +15,7 @@
   <img src="https://img.shields.io/badge/VERSION-3.0-E8443A?style=for-the-badge&labelColor=555555" alt="Version 3.0">
   <img src="https://img.shields.io/badge/CODEX-SKILL-0D1B2A?style=for-the-badge&labelColor=555555" alt="Codex Skill">
   <img src="https://img.shields.io/badge/CLAUDE%20CODE-SKILL-2563EB?style=for-the-badge&labelColor=555555" alt="Claude Code Skill">
+  <img src="https://img.shields.io/badge/LICENSE-MIT-16A34A?style=for-the-badge&labelColor=555555" alt="License MIT">
 </p>
 
 <p align="center">
@@ -22,7 +23,8 @@
   <a href="#安装">安装</a> ·
   <a href="#使用">使用</a> ·
   <a href="#出图方式">出图方式</a> ·
-  <a href="#目录">目录</a>
+  <a href="#目录">目录</a> ·
+  <a href="#许可">许可</a>
 </p>
 
 ---
@@ -85,3 +87,9 @@ assets/frame-size-reference.png  画框与小窗口的尺寸参考图
 scripts/generate.py          OpenAI 出图脚本
 agents/openai.yaml           Codex 界面元数据
 ```
+
+## 许可
+
+本仓库的文档和脚本以 [MIT 许可证](LICENSE) 发布，可自由使用、修改和再发布，保留署名即可。
+
+`assets/style-refs/` 中的图片是游戏截图，版权归原游戏所有，不在 MIT 授权范围内。
