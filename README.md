@@ -24,6 +24,7 @@
   <a href="#使用">使用</a> ·
   <a href="#出图方式">出图方式</a> ·
   <a href="#目录">目录</a> ·
+  <a href="#欢迎晒图">晒图</a> ·
   <a href="#许可">许可</a>
 </p>
 
@@ -87,6 +88,12 @@ assets/frame-size-reference.png  画框与小窗口的尺寸参考图
 scripts/generate.py          OpenAI 出图脚本
 agents/openai.yaml           Codex 界面元数据
 ```
+
+## 欢迎晒图
+
+用这个 skill 画出了满意的图？欢迎到 [Issues](https://github.com/yesyflami/flami-orbitals-skill/issues) 发出来，顺便说说用了什么主体、色调和版式。效果不理想、文字乱码或者有改进想法，也欢迎在那里反馈。
+
+这个 skill 不会向作者回传任何数据：你的照片、描述和生成的图片只会发给你自己使用的生图服务（Codex 或 OpenAI），作者看不到。
 
 ## 许可
 
