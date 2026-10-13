@@ -36,7 +36,11 @@ Find:
 
 #### Ask before generating (at most two rounds)
 
-Generation is slow and costs money, so check the few things you cannot guess before you start. Ask in the user's language, in one message per round, as a short numbered list. **Round 1 — always these two questions, in this order, with these options.** Leave out a question only when the request already answers it.
+Generation is slow and costs money, so check the few things you cannot guess before you start. Ask in the user's language.
+
+**Ask through the environment's question tool, not as chat text.** Use the interactive question/choice tool your environment provides (for example `AskUserQuestion` in Claude Code, or the equivalent user-input / question-card tool in Codex), putting both questions in a single call so the user answers by clicking. Use each option's text below as the option label, and rely on the tool's own free-text or "Other" entry for the custom size. Only if no such tool exists, fall back to one short chat message with the same numbered options. One call (or message) is one round.
+
+**Round 1 — always these two questions, in this order, with these options.** Leave out a question only when the request already answers it.
 
 1. **尺寸 Size**
    - 4:3 横版（默认）
@@ -44,12 +48,12 @@ Generation is slow and costs money, so check the few things you cannot guess bef
    - 3:4 竖版
    - 自定义：the user types any ratio or pixel size, e.g. 1:1, 9:16, 21:9, 1920x1080
 2. **风格 Style**
-   - 失重浪漫
-   - 宿命对决
-   - 破晓启航
-   - 你定
+   - 失重浪漫（温柔梦幻，漂浮中的安静一刻）
+   - 宿命对决（紧张对峙，交锋前的一瞬）
+   - 破晓启航（明亮有希望，迎着第一道光出发）
+   - 你定（按主体挑最合适的）
 
-Show the style names only; do not explain them unless asked. What each one means for the picture:
+Show each style with its bracketed description exactly as written above. What each one means for the picture:
 
 | Style | Feel | Pose & expression | Preferred archetype | Mood palette | FX & type | Dialogue tone |
 |---|---|---|---|---|---|---|
