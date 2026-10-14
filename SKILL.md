@@ -65,6 +65,16 @@ Show each style with its bracketed description exactly as written above. What ea
 
 Whatever the style, the subject's identity anchors and the framing rules stay the same. For a custom style, work out its own row — feel, pose and expression, archetype, mood palette, FX and dialogue tone — from the user's words, in the same spirit as the three presets. If the custom entry is left empty, or says "你定" or "随便", pick the preset that best suits the subject.
 
+**Style example images.** Finished examples live in `assets/style-examples/`, one per style:
+
+| Style | Example |
+|---|---|
+| 失重浪漫 | `assets/style-examples/zero-g-romance.webp` |
+| 宿命对决 | (not yet available) |
+| 破晓启航 | (not yet available) |
+
+Show the available examples to the user together with the style question so they can see what each style looks like: attach them to the question if the question tool accepts images or previews; otherwise display them in the chat, each labelled with its style name, immediately before the question. Skip styles that have no example yet; do not describe or substitute for a missing one. These images are for the user's eyes only — do not open them for your own reference, and do not send them to the image generator or copy their composition, text or characters.
+
 **Round 2 — only if Round 1 left something you still cannot proceed without**, for example a custom size you cannot interpret. Ask just that, in one message.
 
 Rules:

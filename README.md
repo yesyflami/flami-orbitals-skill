@@ -88,6 +88,7 @@ SKILL.md                     工作流
 references/style-guide.md    画风 / 配色 / 字体 / 质感
 references/composition.md    构图层级、六种版式、变化规则
 assets/style-refs/           风格参考图（游戏截图，版权归原游戏所有，后续将替换为自制示例）
+assets/style-examples/       各风格的示例图，提问风格时展示给用户
 assets/frame-size-reference.png  画框与小窗口的尺寸参考图
 scripts/generate.py          OpenAI 出图脚本
 agents/openai.yaml           Codex 界面元数据
