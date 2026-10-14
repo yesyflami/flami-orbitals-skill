@@ -70,7 +70,7 @@ Applied over the whole frame — this is what makes it feel like a capture of a 
 - optional **cinematic letterbox** (black bars top and bottom) for cinematic shots
 - slightly faded, warm VHS/film colour response
 
-Default framing uses a thin inset border, uniform opaque black surround, and several subject-relevant foreground features crossing and occluding the border. Match the main-frame footprint and every inset border to `assets/frame-size-reference.png`; see composition.md for normalized geometry, line weights and limits. Scene palette applies inside the border; black outside it is independent of the selected mood.
+Default framing uses a thin inset border, uniform opaque black surround, and several subject-relevant foreground features crossing and occluding the border. Use the text measurements in composition.md for the main-frame footprint, inset borders, normalized geometry, line weights and limits. Scene palette applies inside the border; black outside it is independent of the selected mood.
 
 ## 5. English style block (paste into every prompt)
 
