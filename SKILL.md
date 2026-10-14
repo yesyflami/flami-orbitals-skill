@@ -22,7 +22,7 @@ Reference files (read both before writing a prompt):
 
 Use rich, unequal overlapping game-interface panels over a quiet background. Depth should come from scale, occlusion and partial-feature close-ups, not dense environmental detail. Keep the Orbitals cel-anime style throughout; do not use pixel art, desktop menus or signatures.
 
-Default to an inset scene frame over a uniform opaque black outer field, several purposeful foreground frame breaks, and mild fisheye/barrel curvature within the frame. Use the normalized frame and panel measurements in `references/composition.md` as text guidance. Keep the outer black field clean and the central face/anatomy stable. Explicit user framing choices override these defaults.
+Default to an inset scene frame over a uniform opaque black outer field, several purposeful foreground frame breaks, and mild fisheye/barrel curvature within the frame. Use `assets/frame-size-reference.png` as the visual size reference for the main frame and all inset-panel borders; follow the normalized measurements in `references/composition.md`. Open this image and attach it to generation as a geometry-only reference. Do not copy its boy, fish, text, palette or background into unrelated subjects. Keep the outer black field clean and the central face/anatomy stable. Explicit user framing choices override these defaults.
 
 Default setting: outer space. Unless the user names another setting or mood, stage the subject in a space scene — open deep space, low orbit above a planet, a station exterior or viewport, or a small planet's surface under a starry sky — and translate the subject's own world into it (a kitchen becomes a galley module, a street becomes a station corridor with a window to the stars). Keep it quiet: sparse stars, one soft nebula or aurora band, or one simplified planet, never a dense starfield. Prefer the space-compatible moods (深空极光, 跃迁霓虹, 金色漩涡); other moods still work when space stays visible.
 
@@ -65,7 +65,7 @@ Show each style with its bracketed description exactly as written above. What ea
 
 Whatever the style, the subject's identity anchors and the framing rules stay the same. For a custom style, work out its own row — feel, pose and expression, archetype, mood palette, FX and dialogue tone — from the user's words, in the same spirit as the three presets. If the custom entry is left empty, or says "你定" or "随便", pick the preset that best suits the subject.
 
-**Style example images.** Finished examples live in `assets/style-examples/`, one per style:
+**Optional style examples for the agent.** Finished examples live in `assets/style-examples/`:
 
 | Style | Example |
 |---|---|
@@ -73,7 +73,7 @@ Whatever the style, the subject's identity anchors and the framing rules stay th
 | 宿命对决 | (not yet available) |
 | 破晓启航 | (not yet available) |
 
-Show the available examples to the user together with the style question so they can see what each style looks like: attach them to the question if the question tool accepts images or previews; otherwise display them in the chat, each labelled with its style name, immediately before the question. Skip styles that have no example yet; do not describe or substitute for a missing one. These images are for the user's eyes only — do not open them for your own reference, and do not send them to the image generator or copy their composition, text or characters.
+Do not automatically display these images in the style question or attach them to question cards. When preparing an image in the corresponding style, the agent may open the available example to understand its mood and rendering. This is optional visual guidance, not a required generation attachment. Do not copy its characters, exact text or layout into unrelated subjects. Skip missing examples. Show an example to the user only when they ask to see it.
 
 **Round 2 — only if Round 1 left something you still cannot proceed without**, for example a custom size you cannot interpret. Ask just that, in one message.
 
@@ -111,7 +111,7 @@ For the default rich composition, select 4–5 unequal panels including 1–2 pa
 
 ### 4. Choose reference images
 
-**Never open, view or preview the images in `assets/style-refs/` yourself.** Handle them by file path only. The look is fully described in `style-guide.md`, so you don't need to see them, and viewing them clutters the user's screen with image previews they did not ask for.
+**Never open, view or preview the images in `assets/style-refs/` yourself.** Handle them by file path only. (The one bundled image you do open is `assets/frame-size-reference.png`, for frame geometry.) The look is fully described in `style-guide.md`, so you don't need to see them, and viewing them clutters the user's screen with image previews they did not ask for.
 
 Style refs are used only by the bundled script (Option B in step 6), which reads them from disk. It passes images to the API in order: put the **subject photo first** (if any), then 2–3 style refs matching the archetype:
 
@@ -125,6 +125,8 @@ Style refs are used only by the bundled script (Option B in step 6), which reads
 | F dialogue | 01-characters, 02-onomatopoeia, 03-space-mecha |
 
 With the built-in image tool (Option A), skip this step: send no style refs and rely on the style block.
+
+In both options, add `assets/frame-size-reference.png` as the last image and name its role in the prompt ("the last image is a geometry-only reference for frame and panel sizes; do not copy its subject, text or colours").
 
 Don't tell the user which refs you picked or which files you read — just proceed to the result.
 
@@ -147,7 +149,7 @@ Image 1 is the subject to redraw (identity reference only — do not keep its ph
 [Frame & depth]
 Paste these three sentences, filling in the band and frame pixel sizes for the chosen canvas from the table in composition.md, then add the specifics below them:
 "The picture is a rounded-rectangle framed scene mounted on a plain pure-black canvas. The frame is centered, and a wide, clearly visible pure-black border of equal thickness — about <band> px, 7–8% of the canvas's shorter side — remains on all four sides, leaving a frame of about <frame W>x<frame H> px: a generous black mat, never a thin bezel, and the frame must not reach the canvas edges. Parts of the subject break out of the frame and extend far into the black border, almost reaching the canvas edge, overlapping and hiding the frame line where they cross it."
-<name each overflow and its side: the one major extension (which body part or object, which side, crossing 70–100% of the black band), the one or two secondary extensions on other sides (40–60% of the band), and the title or panel corner that crosses the frame; panel border sizes following the text measurements in composition.md; mild inner-scene fisheye with stable central anatomy and readable text>
+<name each overflow and its side: the one major extension (which body part or object, which side, crossing 70–100% of the black band), the one or two secondary extensions on other sides (40–60% of the band), and the title or panel corner that crosses the frame; panel border sizes matched to assets/frame-size-reference.png using composition.md measurements; mild inner-scene fisheye with stable central anatomy and readable text>
 
 [Enrichment & FX]
 <1–3 quiet world details; one localized FX family; 3–6 unequal overlapping panels including 1–2 partial-feature close-ups, each with a subject-relevant function; give every panel an explicit position from the chosen placement pattern (not one per corner); specify clean negative space and what stays visually subdued>
@@ -168,7 +170,7 @@ Be concrete about positions and sizes — "giant white title spanning 80% of the
 
 Save the prompt and the result under `./orbitals-art/` in the current working directory, with a slug like `cat-cut-in`. Make one image per request unless the user asks for more — generation is slow and costs money.
 
-**Option A — built-in image generation (preferred when available, e.g. Codex).** If the environment gives you an image-generation or image-editing tool, use it directly: send the compiled prompt, plus the user's subject photo if there is one and the tool accepts input images. Do not open or attach the style refs — the style block carries the look. Use the tool's closest size to the chosen aspect ratio, then save or copy the result to `./orbitals-art/<slug>.png`.
+**Option A — built-in image generation (preferred when available, e.g. Codex).** If the environment gives you an image-generation or image-editing tool, use it directly: send the compiled prompt, plus the user's subject photo if there is one and the tool accepts input images. Also attach `SKILL_DIR/assets/frame-size-reference.png` as the geometry reference. Do not open or attach the style refs — the style block carries the look. Use the tool's closest size to the chosen aspect ratio, then save or copy the result to `./orbitals-art/<slug>.png`.
 
 **Option B — bundled script (when there is no built-in tool).** It calls the OpenAI Images API with only the Python standard library:
 
