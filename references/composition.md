@@ -32,8 +32,8 @@ Hierarchy: Hero (L) > big type device (L/M) > insets & enrichment (M/S) > HUD (S
 
 Invent a tiny game moment around the subject. Answer in one line each:
 
-- **Chapter**: a 2–5 character Japanese title that puns on the subject, Japanese only. (cat → 「猫の惑星」; coffee cup → 「目覚めの炉」) An optional small line under it is a Japanese tagline or kana reading, never a Chinese translation.
-- **Mission**: quest HUD text in Japanese, e.g. 「逃げた毛糸玉を探せ」/「◇ 毛糸 2/5」
+- **Chapter**: a 2–5 character Japanese title + Chinese translation that puns on the subject. (cat → 「猫の惑星」/「猫之星」; coffee cup → 「目覚めの炉」/「苏醒熔炉」)
+- **Mission**: quest HUD text, e.g. 「找回逃跑的毛线球」/「◇ 已收集毛线 2/5」
 - **Line**: one short natural Japanese dialogue line (aim for ≤ 20 characters) with a Japanese speaker label. Match the subject and tone. Preserve exact user wording or a requested language instead; do not reuse a fixed line across subjects.
 - **Enrichment**: 1–3 quiet world details plus subject-relevant panel functions that translate the subject's traits into Orbitals objects. These are options, not a checklist to accumulate. Good enrichment is *specific to the subject*:
   - a dog → floating bone-shaped asteroid, scout pod with dog ears, a paw-print on the airlock
@@ -45,13 +45,13 @@ If the user supplied any of these (title, dialogue, mood), use theirs verbatim.
 
 ## 3. Layout archetypes
 
-Choose one. Each names a layout that actually appears in the game. The positions given for the big title and the insets in each archetype are starting points only: the title-placement and panel-placement rules below decide where they finally go.
+Choose one. Each names a layout that actually appears in the game.
 
-**A. 章节标题卡 Chapter card** — cinematic letterbox; hero in a deep painted environment at 55–65%; giant white Japanese title across the centre band crossing the hero's body (not face); optional small Japanese tagline beside it; dialogue subtitle in lower third; one inset. Best moods: ruins, furnace, aurora.
+**A. 章节标题卡 Chapter card** — cinematic letterbox; hero in a deep painted environment at 55–65%; giant white Japanese title across the centre band crossing the hero's body (not face); small Chinese subtitle beneath; dialogue subtitle in lower third; one inset bottom-right. Best moods: ruins, furnace, aurora.
 
 **B. 角色切入 Cut-in** — diagonal split: a giant dramatic reaction face of the hero (cut-in, top-left to centre, cel-shaded in a duotone of the mood) above an action shot of the hero (lower-right) with a neon beam or explosion; localized speed lines; huge vertical onomatopoeia on one side; quest HUD top-left. Best moods: warp neon, furnace.
 
-**C. 道具获得 Item get** — radial white/pale-blue burst behind the hero's signature object or the hero holding it, on a painted orange-flame or golden-swirl field; red katakana item title, arched, with an optional small Japanese label; dialogue subtitle bottom-left; one inset. Optional duplicated split-screen (two identical halves) like the game's co-op view. Best moods: furnace, golden vortex.
+**C. 道具获得 Item get** — radial white/pale-blue burst behind the hero's signature object or the hero holding it, on a painted orange-flame or golden-swirl field; red katakana item title arched at top with Chinese label; dialogue subtitle bottom-left; one inset. Optional duplicated split-screen (two identical halves) like the game's co-op view. Best moods: furnace, golden vortex.
 
 **D. 双人分屏 Co-op split screen** — vertical seam down the middle; each half shows the hero from a different angle (or, for a pair of subjects, one per side); quest HUD top-left of each half; P1 inset with blue frame on the left edge, P2 inset with salmon frame on the right edge; shared dialogue in the lower third. Best moods: ruins, control room.
 
@@ -62,15 +62,6 @@ Choose one. Each names a layout that actually appears in the game. The positions
 ### Interface depth and background restraint
 
 - Default to 4–5 panels in an asymmetric L, staggered zigzag or counter-corner layout. Use a clear size hierarchy such as 1 large + 1 medium + 3 small, with different aspect ratios and 5–20% overlap at selected edges. Avoid equal tiles, rigid columns and uniformly separated cards.
-- **Panel placement — spread them, do not park one in each corner.** The habitual failure is four panels sitting in the four corners like picture-frame brackets. Instead pick one placement pattern per image and vary it between images:
-  - *one-side stack:* three or four panels cascade down one side, overlapping each other, the opposite side left open for the hero;
-  - *diagonal chain:* panels step from one corner toward the opposite one, crossing behind or beside the hero;
-  - *orbit:* panels ring the hero at uneven angles and distances, including mid-edge and near-centre positions;
-  - *top or bottom band:* panels overlap along one horizontal edge, the rest of the frame open;
-  - *cluster and outlier:* a tight overlapping group of two or three in one area plus a single panel far away.
-
-  Rules for any pattern: at most two panels may sit in corners, and never in more than two corners; at least one panel sits at a mid-edge or toward the interior, overlapping the hero's silhouette (never the face); at least one pair of panels overlaps each other; small tilts of 2–6° are welcome. Mirror-symmetric arrangements are out.
-- **Big-title placement — anywhere, not top-centre by default.** Choose the spot that suits the hero's pose and the open space, and vary it between images: across the centre band crossing the hero's torso; low in the frame above the dialogue; down the left or right side as vertical Japanese text (縦書き); on a diagonal following the action; tucked large into one upper or lower corner; or across the top. The top is one option among these, used no more often than the others. Wherever it goes it must not cover a face, must stay clear of the dialogue subtitle, and may still break the frame edge as graphic overflow.
 - Count the 1–2 partial-feature close-ups inside the total panel count. Crop different distinctive details (eyes/accessory/paw/tool), never repeat a full figure. Other panels serve the subject: an action gauge, map, object readout or mission status, not arbitrary decoration. Compact labels and diagrams need not add more narrative text blocks.
 - Keep the hero unboxed and dominant, with face and defining action unobscured. Some panel edges can overlap the hero silhouette; a small prop may pass behind an edge. Use scale and occlusion for depth before adding foreground scenery.
 - Keep the background low contrast and low detail. Avoid dense stars, detailed planets, crowds, layered machinery, rubble, dust sprays and oversized foreground consoles by default. These may be used selectively if central to the user’s subject, never all together. Fine film grain must not become visible dirt or speckle clutter.
@@ -108,7 +99,7 @@ Choose one. Each names a layout that actually appears in the game. The positions
 
 ## 4. Variation axes
 
-Pick one value per axis. If earlier images in this conversation used a value, change at least two of: archetype, hero placement, crop, mood. Title placement and panel placement must always differ from the previous image.
+Pick one value per axis. If earlier images in this conversation used a value, change at least two of: archetype, hero placement, crop, mood.
 
 | Axis | Options |
 |---|---|
@@ -117,8 +108,6 @@ Pick one value per axis. If earlier images in this conversation used a value, ch
 | hero placement | left-third / right-third / low-rise (rising from bottom edge) / diagonal / over-shoulder |
 | crop | reaction close-up / bust / waist-up / full-body / object-hero |
 | big type device | chapter title / onomatopoeia / item title / logo |
-| title placement | centre band / low above dialogue / vertical left / vertical right / diagonal / upper or lower corner / top |
-| panel placement | one-side stack / diagonal chain / orbit / top or bottom band / cluster and outlier |
 | FX family | speed lines / radial burst / hyperspace streaks / neon beam / sparkle stars / floating debris / cel explosion |
 | inset count | 1 / 2 (unequal sizes and crops) |
 | small text set | dialogue only / dialogue + quest HUD / HUD + buttons + P1P2 / dialogue + counter |
@@ -141,8 +130,6 @@ Before compiling the prompt, confirm:
 - [ ] one FX family touching the hero
 - [ ] 1–2 insets showing partial features, unequal if two
 - [ ] exactly one big type device; total text 2–5; every string short and quoted
-- [ ] all on-image text Japanese, no Chinese, unless the user specified otherwise
-- [ ] panels follow one placement pattern, not one per corner; title placed by choice, not top-centre by habit; both differ from the previous image
 - [ ] 25–35% connected calm space; background and FX are visibly quieter than hero/UI
 - [ ] 3–6 unequal panels with purposeful overlap, including 1–2 distinct partial crops
 - [ ] short natural Japanese bottom dialogue unless user wording/language overrides

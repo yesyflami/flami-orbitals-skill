@@ -45,17 +45,17 @@ Text is a core part of the look. Every image gets 2–5 text elements from this 
 
 | Element | Look | Example |
 |---|---|---|
-| **Chapter title card** | Massive ultra-heavy white Japanese gothic, hand-cut slightly jagged edges, tight spacing, spanning up to ~80% of frame width when horizontal, or most of the frame height when set vertically; faint red/cyan fringe. Placement is free (see composition.md), not fixed to the top or centre. Optional small bold white Japanese tagline beside it with wide letter-spacing; never a Chinese translation. | 「秘密の庭」 |
+| **Chapter title card** | Massive ultra-heavy white Japanese gothic, hand-cut slightly jagged edges, tight spacing, spanning ~80% of frame width across the centre, faint red/cyan fringe. Small bold white Chinese subtitle centred beneath with wide letter-spacing. | 「秘密の庭」+「秘密花园」 |
 | **Logo** | Slanted, angular, sharp-cut katakana with a red four-point star flare crossing it; cream fill. | 「オービタルズ」 |
 | **Onomatopoeia / reaction** | Hand-lettered rounded manga kana, cream-yellow fill #F8D98A, thick dark-brown outline, tilted, stacked vertically, huge. | 「はあ!?」「ドーン」 |
-| **Item-get title** | Bold rounded red katakana with white outline + drop shadow, slight arc; optional small grey Japanese label below. | 「ジャンプパック」 |
+| **Item-get title** | Bold rounded red katakana with white outline + drop shadow, slight arc; small grey Chinese label below. | 「ジャンプパック」+「喷气背包」 |
 | **Dialogue subtitle** | Lower third, centred or left-aligned. Speaker name in pink-red #F06A7A (or periwinkle blue) on its own line, line text in yellow #F2D45A, rounded gothic, thin dark outline. | 「少年」/「この一球、宇宙へ届け！」 (example only; adapt to subject) |
-| **Quest HUD** | Top-left, small white text with soft shadow; second line starts with a yellow ◇ diamond and ends with yellow progress "0/5". | 「主エレベーター起動」/「◇ 故障システム修復 0/5」 |
-| **Menu / buttons** | Blue rounded-trapezoid pills with outer glow, cream circle button icon ("A", "B") + white label. | 「Ⓐ スタート」「Ⓑ もどる」 |
+| **Quest HUD** | Top-left, small white text with soft shadow; second line starts with a yellow ◇ diamond and ends with yellow progress "0/5". | 「启动主电梯」/「◇ 修复故障系统 0/5」 |
+| **Menu / buttons** | Blue rounded-trapezoid pills with outer glow, cream circle button icon ("A", "B") + white label. | 「Ⓐ 开始」「Ⓑ 返回」 |
 | **Player badges** | Top-right: two small rounded squares "P1" (blue) "P2" (grey or blue) with a cream gamepad icon below. | P1 P2 |
 | **Big counter** | Single white digit in a red square plate, or a 7-segment-style LED readout "000.0" on a pastel device. | 「3」 |
 
-Text language: every on-image text element defaults to Japanese — titles, taglines, HUD, panel labels, buttons, dialogue and speaker labels. No Chinese anywhere unless the user asks for it. Short Latin UI tags (P1, SONAR, SYNC, digits) are fine. Preserve any exact user text and explicit language request.
+Dialogue language: default bottom dialogue and speaker labels to Japanese. Other HUD/title languages follow the chosen design; preserve any exact user text and explicit language request.
 
 Text rules: keep each string short (titles ≤ 5 characters, dialogue ≤ 20 characters) because image models garble long CJK strings. Always put the exact text in quotes in the prompt.
 

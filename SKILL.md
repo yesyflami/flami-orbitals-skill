@@ -26,9 +26,7 @@ Default to an inset scene frame over a uniform opaque black outer field, several
 
 Default setting: outer space. Unless the user names another setting or mood, stage the subject in a space scene — open deep space, low orbit above a planet, a station exterior or viewport, or a small planet's surface under a starry sky — and translate the subject's own world into it (a kitchen becomes a galley module, a street becomes a station corridor with a window to the stars). Keep it quiet: sparse stars, one soft nebula or aurora band, or one simplified planet, never a dense starfield. Prefer the space-compatible moods (深空极光, 跃迁霓虹, 金色漩涡); other moods still work when space stays visible.
 
-All on-image text defaults to natural Japanese: the big title, any small subtitle under it, quest HUD, panel labels, buttons, dialogue and speaker labels. Do not put Chinese on the image — no Chinese translation line under the title, no Chinese HUD or labels. A subtitle under the title, if you use one, is a short Japanese tagline or kana reading, or is left out. Short Latin UI tags the game itself uses (P1, SONAR, SYNC, digits) are fine. Keep user-supplied text verbatim, and switch language only when the user explicitly asks for one.
-
-Vary the layout from image to image: inset panels are not pinned to the four corners and the big title is not pinned to the top. Follow the placement rules in composition.md.
+Bottom dialogue and speaker labels default to natural Japanese; keep user-supplied text verbatim and follow an explicitly requested language instead. This default applies to dialogue, not automatically to every HUD or title.
 
 ### 1. Read the request
 
@@ -65,16 +63,6 @@ Show each style with its bracketed description exactly as written above. What ea
 
 Whatever the style, the subject's identity anchors and the framing rules stay the same. For a custom style, work out its own row — feel, pose and expression, archetype, mood palette, FX and dialogue tone — from the user's words, in the same spirit as the three presets. If the custom entry is left empty, or says "你定" or "随便", pick the preset that best suits the subject.
 
-**Optional style examples for the agent.** Finished examples live in `assets/style-examples/`:
-
-| Style | Example |
-|---|---|
-| 失重浪漫 | `assets/style-examples/zero-g-romance.webp` |
-| 宿命对决 | (not yet available) |
-| 破晓启航 | (not yet available) |
-
-Do not automatically display these images in the style question or attach them to question cards. When preparing an image in the corresponding style, the agent may open the available example to understand its mood and rendering. This is optional visual guidance, not a required generation attachment. Do not copy its characters, exact text or layout into unrelated subjects. Skip missing examples. Show an example to the user only when they ask to see it.
-
 **Round 2 — only if Round 1 left something you still cannot proceed without**, for example a custom size you cannot interpret. Ask just that, in one message.
 
 Rules:
@@ -83,7 +71,7 @@ Rules:
 - Do not ask about the story, or who the hero is. Invent the story from the subject and the chosen style; with several people or subjects, treat them as one hero group unless the user singles one out.
 - If every question is already answered, or the user says "直接画", "随便", "你定" or similar, ask nothing and generate.
 - A blank or skipped item, or an answer like "你定", means you choose; do not ask about it again.
-- Do not ask about on-image text. Write the title, HUD and dialogue yourself using the default text rules above (everything in Japanese, no Chinese); change the wording or language only when the user specifies it.
+- Do not ask about on-image text. Write the title, HUD and dialogue yourself using the default text rules above (Japanese dialogue and speaker label); change the wording or language only when the user specifies it.
 - Do not ask about layout, mood palette, setting or inset contents either. Derive them from the chosen style and the defaults; use them only if the user volunteers them.
 - Questions apply to a new image. For a tweak or regeneration of the image you just made, apply the change without re-asking.
 
@@ -103,7 +91,7 @@ If there is a source image, look at it once and note **3–5 identity anchors pe
 
 Follow `composition.md` §2–§5:
 - Build on the chosen style: take pose, expression, archetype, mood palette, FX and dialogue tone from its row in the style table (step 1), then invent a story that fits both the style and the subject.
-- Invent the mini-story: chapter title (Japanese only), Japanese mission HUD, one short Japanese dialogue line, and 1–3 restrained subject-specific world details. Functional interface panels may carry additional story details.
+- Invent the mini-story: chapter title (JP + CN), mission HUD, one short Japanese dialogue line, and 1–3 restrained subject-specific world details. Functional interface panels may carry additional story details.
 - Pick one value per variation axis. Fit the archetype to the subject (a dramatic pet → cut-in; an object → item-get; two people → split-screen; a portrait → main-menu or dialogue). If you already made images in this conversation, change at least two high-impact axes so outputs don't repeat.
 - Run the preflight checklist.
 
@@ -152,7 +140,7 @@ Paste these three sentences, filling in the band and frame pixel sizes for the c
 <name each overflow and its side: the one major extension (which body part or object, which side, crossing 70–100% of the black band), the one or two secondary extensions on other sides (40–60% of the band), and the title or panel corner that crosses the frame; panel border sizes matched to assets/frame-size-reference.png using composition.md measurements; mild inner-scene fisheye with stable central anatomy and readable text>
 
 [Enrichment & FX]
-<1–3 quiet world details; one localized FX family; 3–6 unequal overlapping panels including 1–2 partial-feature close-ups, each with a subject-relevant function; give every panel an explicit position from the chosen placement pattern (not one per corner); specify clean negative space and what stays visually subdued>
+<1–3 quiet world details; one localized FX family; 3–6 unequal overlapping panels including 1–2 partial-feature close-ups, each with a subject-relevant function; specify clean negative space and what stays visually subdued>
 
 [Typography]
 <each text element: exact string in quotes, position, look from style-guide §3>
@@ -186,7 +174,7 @@ python3 SKILL_DIR/scripts/generate.py --prompt-file ./orbitals-art/<slug>.txt \
 
 ### 7. Check and deliver
 
-Open the result and compare it with the preflight checklist: is the hero recognisable through its anchors, is it clearly 80s cel anime (not a filtered photo), are unequal interface layers clearly overlapping, is the scene set in space (unless the user chose another setting), is the background calm rather than filled with stars/debris/architecture, does the image match the size the user chose, is the text legible, is every piece of on-image text Japanese with no Chinese (unless the user requested otherwise), are the inset panels spread around the frame rather than one in each corner, is the big title placed where the layout called for rather than defaulting to top-centre, is the outer field uniformly black, is there a wide black border of equal thickness on all four sides (7–8% of the shorter side, whatever the aspect ratio), does one large part of the subject extend most of the way across that border with one or two smaller extensions on other sides, do they visibly occlude the inset border, and is inner fisheye curvature mild with readable text and coherent anatomy?
+Open the result and compare it with the preflight checklist: is the hero recognisable through its anchors, is it clearly 80s cel anime (not a filtered photo), are unequal interface layers clearly overlapping, is the scene set in space (unless the user chose another setting), is the background calm rather than filled with stars/debris/architecture, does the image match the size the user chose, is the text legible, is the bottom dialogue Japanese unless the user requested otherwise, is the outer field uniformly black, is there a wide black border of equal thickness on all four sides (7–8% of the shorter side, whatever the aspect ratio), does one large part of the subject extend most of the way across that border with one or two smaller extensions on other sides, do they visibly occlude the inset border, and is inner fisheye curvature mild with readable text and coherent anatomy?
 
 Then reply briefly (in the user's language) with:
 - the image path, and the image itself,
