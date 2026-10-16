@@ -7,7 +7,7 @@
 <h3 align="center">让任何主体都成为游戏里的一帧</h3>
 
 <p align="center">
-  把一张照片或一句描述交给 Agent，说一句你想画什么。<br>
+  把一张示例图交给 Codex，生成你的专属游戏画面。<br>
   自动重绘成《轨道双子星 / Orbitals》的 80 年代赛璐璐画风，并配上章节标题、对白字幕、任务 HUD 与特写小窗。
 </p>
 
@@ -19,6 +19,7 @@
 
 <p align="center">
   <a href="#画面特点">画面特点</a> ·
+  <a href="#效果预览">效果预览</a> ·
   <a href="#安装">安装</a> ·
   <a href="#使用">使用</a> ·
   <a href="#出图方式">出图方式</a> ·
@@ -43,66 +44,66 @@
 
 以上都是默认值，你在请求里指定的文字、语言、场景和比例优先。
 
+## 效果预览
+
+输入示例图，输出《轨道双子星 / Orbitals》风格效果图。
+
+| Before | After |
+| :---: | :---: |
+| <img src="assets/previews/01-departure-before.jpg" alt="01-departure — Before" width="420"> | <img src="assets/previews/01-departure-after.jpg" alt="01-departure — After" width="420"> |
+| <img src="assets/previews/02-denim-before.jpg" alt="02-denim — Before" width="420"> | <img src="assets/previews/02-denim-after.jpg" alt="02-denim — After" width="420"> |
+| <img src="assets/previews/03-dance-before.jpg" alt="03-dance — Before" width="420"> | <img src="assets/previews/03-dance-after.jpg" alt="03-dance — After" width="420"> |
+| <img src="assets/previews/04-camera-before.jpg" alt="04-camera — Before" width="420"> | <img src="assets/previews/04-camera-after.jpg" alt="04-camera — After" width="420"> |
+| <img src="assets/previews/05-traveler-before.jpg" alt="05-traveler — Before" width="420"> | <img src="assets/previews/05-traveler-after.jpg" alt="05-traveler — After" width="420"> |
+| <img src="assets/previews/06-cowboy-before.jpg" alt="06-cowboy — Before" width="420"> | <img src="assets/previews/06-cowboy-after.jpg" alt="06-cowboy — After" width="420"> |
+| <img src="assets/previews/07-coffee-before.png" alt="07-coffee — Before" width="420"> | <img src="assets/previews/07-coffee-after.png" alt="07-coffee — After" width="420"> |
+| <img src="assets/previews/08-breakfast-before.png" alt="08-breakfast — Before" width="420"> | <img src="assets/previews/08-breakfast-after.png" alt="08-breakfast — After" width="420"> |
+| <img src="assets/previews/09-fish-before.png" alt="09-fish — Before" width="420"> | <img src="assets/previews/09-fish-after.png" alt="09-fish — After" width="420"> |
+
 ## 安装
 
-在具备内置生图工具的 Codex 环境中使用。以下命令会下载完整的工作流、脚本、参考文档和全部图片素材，不需要逐个复制文件。
+### 1. Agent 安装
 
-### 用 Git 安装（推荐）
+把下面这条指令复制给 Codex：
 
-在终端运行（macOS / Linux）：
+```text
+请从 https://github.com/yesyflami/flami-orbitals-skill 安装完整的 flami-orbitals-skill 到我的 Codex Skill 目录，保留全部素材，不修改 Skill、脚本或 API 配置。
+```
+
+### 2. Git 安装
 
 ```bash
-mkdir -p ~/.agents/skills
 git clone https://github.com/yesyflami/flami-orbitals-skill.git ~/.agents/skills/flami-orbitals-skill
 ```
 
-`~/.agents/skills/` 是 Codex 官方支持的用户级 Skill 目录。Windows 用户可把完整文件夹放在 `%USERPROFILE%\.agents\skills\flami-orbitals-skill`。
+安装后在 Codex 中新开一个对话使用。
 
-如果目标目录已经存在，不要重复 clone；用下面的命令更新 Git 安装的版本：
+### 3. ZIP 使用
 
-```bash
-git -C ~/.agents/skills/flami-orbitals-skill pull --ff-only
+[下载 ZIP](https://github.com/yesyflami/flami-orbitals-skill/archive/refs/heads/main.zip)，可以直接把 ZIP 和示例图一起上传到 **ChatGPT 网页端**，让它读取 Skill 后生图：
+
+```text
+请读取 ZIP 中的 SKILL.md 和参考文档，按这个 Skill 把我上传的示例图生成一张效果图，保留主体特征和 Skill 的默认风格。
 ```
 
-如果你之前已安装在 `~/.codex/skills/` 且 Codex 能识别它，可以继续使用原目录；避免在不同目录重复安装同名 Skill。
-
-### 用 ZIP 安装
-
-在本仓库页面点击 **Code → Download ZIP**，解压后把仓库根目录重命名为 `flami-orbitals-skill`，将完整文件夹放进 `~/.agents/skills/`。确认 `SKILL.md` 直接位于该文件夹下，`assets/`、`references/`、`scripts/`、`agents/` 与它同级。不要只复制 `SKILL.md`，也不要漏掉素材。
-
-安装后在 Codex 中新开一个对话；如果没有发现 Skill，重启 Codex。在支持 Skill 选择器的界面中输入 `$` 并选择 `flami-orbitals-skill`，也可以直接在消息里写出 Skill 名称。
-
-官方说明：[Codex Skills](https://developers.openai.com/codex/skills/)。
+也可以解压，将完整的 `flami-orbitals-skill` 文件夹放入 `~/.agents/skills/`，供 Codex 使用。网页端需要能够读取附件并使用生图功能。
 
 ## 使用
 
-### 复制这条 Prompt 即可测试
+**输入示例图 → 输出效果图。**
 
-安装完成后，在 Codex 中上传一张你想重绘的照片，再复制发送：
-
-```text
-请使用 $flami-orbitals-skill，把我上传的这张照片生成一张《轨道双子星 / Orbitals》风格的游戏画面。严格读取并遵循这个 Skill 的 SKILL.md 和参考文档，保留人物或主体的辨识特征，采用 80 年代赛璐璐画风，使用默认的 4:3 横版、宇宙场景、纯黑外底、内框、越框效果、大小不一且交叠的功能面板，以及日文对白。其余构图、章节标题和任务内容由你按 Skill 选择，只生成一张图片。使用 Skill 优先指定的 Codex 内置生图工具，不修改 Skill、脚本或 API 配置；如果该工具不可用或失败，请说明原因并停止，不要自行切换 API。生成后展示图片，并告知保存路径、实际尺寸及明显偏差。
-```
-
-不用照片也可以，直接把主体描述清楚，例如：
+在 Codex 中上传一张示例图，再发送：
 
 ```text
-请使用 $flami-orbitals-skill，画一只戴着圆框眼镜、举着咖啡杯的橘猫宇航员，在太空站控制室值夜班。其余按 Skill 默认流程选择，只生成一张。使用 Codex 内置生图工具，不修改 Skill 或 API 配置；不可用或失败时停止并说明原因。展示图片并告知保存路径。
+请使用 $flami-orbitals-skill，把我上传的示例图生成一张《轨道双子星 / Orbitals》风格的效果图，保留主体辨识特征，其余按 Skill 默认流程选择。使用内置生图工具，不修改 Skill 或 API 配置；工具不可用时请说明原因，不要自行切换 API。
 ```
 
-想调整画面时，可以在 Prompt 后补充：
-
-- 色调：红幕菜单 / 深空极光 / 遗迹森林 / 熔炉 / 金色漩涡 / 跃迁霓虹 / 控制室。
-- 版式：章节标题卡 / 角色切入 / 道具获得 / 双人分屏 / 主菜单 / 对话特写。
-- 比例：4:3（默认）/ 16:9 / 竖版 / 方形；需要具体比例时请明确写出。
-- 场景、标题和对白：明确指定即可；你给出的文字与语言优先。
-
-完整仓库让大家使用相同的工作流和素材；生成结果仍会随模型、工具能力和随机性变化，不保证每次得到完全相同的图片。最终尺寸以实际输出为准。
+想微调时，直接用自然语言提出要求即可，例如「改成深空极光配色」「对白换成中文」「标题小一点」「保留人物姿势，背景换成空间站」。
 
 ## 出图方式
 
 1. **Codex 内置生图工具（优先）**：工具可用时按 Skill 直接调用，无需为内置工具另配 `OPENAI_API_KEY`。不同 Codex 环境提供的工具可能不同，安装 Skill 本身不会增加生图权限。
-2. **仓库自带脚本（备用）**：Skill 原文规定，没有内置工具时可使用 `scripts/generate.py` 调用 OpenAI Images API。需要 Python 3 和 `OPENAI_API_KEY`，脚本只使用 Python 标准库。上面的测试 Prompt 要求不可用时停止，因此不会自行切换到这条路径。
+2. **仓库自带脚本（备用）**：Skill 原文规定，没有内置工具时可使用 `scripts/generate.py` 调用 OpenAI Images API。需要 Python 3 和 `OPENAI_API_KEY`，脚本只使用 Python 标准库。上面的 Codex 使用指令要求工具不可用时说明原因，不会自行切换到这条路径。
 
 仓库保留原有脚本和 API 行为：默认模型为 `gpt-image-1`，可通过 `OPENAI_IMAGE_MODEL` 指定模型、`OPENAI_BASE_URL` 指定兼容服务地址。密钥请仅在自己的环境中配置，不要写入仓库或聊天消息。脚本支持的横版尺寸为 1536×1024（3:2），并非默认目标 4:3；使用脚本时应如实说明尺寸偏差。
 
@@ -112,6 +113,7 @@ git -C ~/.agents/skills/flami-orbitals-skill pull --ff-only
 SKILL.md                     工作流
 references/style-guide.md    画风 / 配色 / 字体 / 质感
 references/composition.md    构图层级、六种版式、变化规则
+assets/previews/             Before / After 效果预览
 assets/style-refs/           风格参考图（游戏截图，版权归原游戏所有，后续将替换为自制示例）
 assets/frame-size-reference.png  画框与小窗口的尺寸参考图
 scripts/generate.py          OpenAI 出图脚本
@@ -129,7 +131,3 @@ agents/openai.yaml           Codex 界面元数据
 本仓库的文档和脚本以 [MIT 许可证](LICENSE) 发布，可自由使用、修改和再发布，保留署名即可。
 
 `assets/style-refs/` 中的图片是游戏截图，版权归原游戏所有，不在 MIT 授权范围内。
-
-## 贡献者
-
-- [yesyflami](https://github.com/yesyflami)
