@@ -49,7 +49,7 @@ Follow `composition.md` §2–§5:
 - Pick one value per variation axis. Fit the archetype to the subject (a dramatic pet → cut-in; an object → item-get; two people → split-screen; a portrait → main-menu or dialogue). If you already made images in this conversation, change at least two high-impact axes so outputs don't repeat.
 - Run the preflight checklist.
 
-For the default composition, use one dominant hero with a small number of functional HUD elements. Do not add inset detail windows or partial-feature close-ups. Specify panel positions only for functional interface elements and calm background regions using composition.md.
+For the default composition, use one dominant hero with a small number of functional HUD elements. Specify positions only for functional interface elements and calm background regions using composition.md.
 
 ### 4. Choose reference images
 
@@ -68,7 +68,7 @@ Style refs are used only by the bundled script (Option B in step 6), which reads
 
 With the built-in image tool (Option A), skip this step: send no style refs and rely on the style block.
 
-In both options, add `assets/frame-size-reference.png` as the last image and name its role in the prompt ("the last image is a geometry-only reference for frame and panel sizes; do not copy its subject, text or colours").
+In both options, add `assets/frame-size-reference.png` as the last image and name its role in the prompt ("the last image is a geometry-only reference for the main frame footprint and border; do not copy its subject, text or colours").
 
 Don't tell the user which refs you picked or which files you read — just proceed to the result.
 
@@ -89,10 +89,10 @@ Image 1 is the subject to redraw (identity reference only — do not keep its ph
 <archetype layout in concrete positions: what is top-left, centre band, lower third, right edge; frame type (letterbox / split / full-bleed); mood palette with hex colours; calm space>
 
 [Frame & depth]
-<uniform opaque black outer field; main frame and panel border sizes matched to assets/frame-size-reference.png using composition.md measurements; 2–4 subject-relevant features crossing the frame across at least two sides; frame occluded behind them; mild inner-scene fisheye with stable central anatomy and readable text>
+<uniform opaque black outer field; main frame and border sized to assets/frame-size-reference.png using composition.md measurements; 2–4 subject-relevant features crossing the frame across at least two sides; frame occluded behind them; mild inner-scene fisheye with stable central anatomy and readable text>
 
 [Enrichment & FX]
-<1–3 quiet world details; one localized FX family; functional HUD elements only, with no inset detail windows or partial-feature close-ups; specify clean negative space and what stays visually subdued>
+<1–3 quiet world details; one localized FX family; functional HUD elements only; specify clean negative space and what stays visually subdued>
 
 [Typography]
 <each text element: exact string in quotes, position, look from style-guide §3>
@@ -126,7 +126,7 @@ python3 SKILL_DIR/scripts/generate.py --prompt-file ./orbitals-art/<slug>.txt \
 
 ### 7. Check and deliver
 
-Open the result and compare it with the preflight checklist: is the hero recognisable through its anchors, is it clearly 80s cel anime (not a filtered photo), are functional HUD elements readable without detail-window enlargements, is the scene set in space (unless the user chose another setting), is the background calm rather than filled with stars/debris/architecture, is the image 4:3 (unless another ratio was requested), is the text legible, is the bottom dialogue Japanese unless the user requested otherwise, is the outer field uniformly black, do foreground features coherently occlude the main frame border, and is inner fisheye curvature mild with readable text and coherent anatomy?
+Open the result and compare it with the preflight checklist: is the hero recognisable through its anchors, is it clearly 80s cel anime (not a filtered photo), are functional HUD elements readable, is the scene set in space (unless the user chose another setting), is the background calm rather than filled with stars/debris/architecture, is the image 4:3 (unless another ratio was requested), is the text legible, is the bottom dialogue Japanese unless the user requested otherwise, is the outer field uniformly black, do foreground features coherently occlude the main frame border, and is inner fisheye curvature mild with readable text and coherent anatomy?
 
 Then reply briefly (in the user's language) with:
 - the image path, and the image itself,
