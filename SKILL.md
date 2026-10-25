@@ -10,7 +10,7 @@ All paths below are relative to the directory containing this SKILL.md (call it 
 Make one image that looks like **a captured moment from the game *Orbitals*, starring the user's subject**. Two things must both happen:
 
 1. **Style** — redraw the subject in the game's 80s cel-anime look, with its palette, film surface and typography.
-2. **Composition** — don't just restyle the source. Build a layered game frame around the subject: chapter title or onomatopoeia, dialogue, HUD, portrait inset, FX, and new world elements that extend the subject into the game's universe.
+2. **Composition** — don't just restyle the source. Build a layered game frame around the subject: chapter title or onomatopoeia, dialogue, HUD, functional overlays, FX, and new world elements that extend the subject into the game's universe.
 
 Reference files (read both before writing a prompt):
 - `references/style-guide.md` — rendering, palettes (scene moods), typography, film surface, and a ready-made English style block.
@@ -20,9 +20,9 @@ Reference files (read both before writing a prompt):
 
 ### Accepted visual defaults
 
-Use rich, unequal overlapping game-interface panels over a quiet background. Depth should come from scale, occlusion and partial-feature close-ups, not dense environmental detail. Keep the Orbitals cel-anime style throughout; do not use pixel art, desktop menus or signatures.
+Use a clean hero composition with restrained game-interface overlays over a quiet background. Depth should come from scale, occlusion and dynamic pose, not detail-window enlargements or dense environmental detail. Keep the Orbitals cel-anime style throughout; do not use pixel art, desktop menus or signatures.
 
-Default to an inset scene frame over a uniform opaque black outer field, several purposeful foreground frame breaks, and mild fisheye/barrel curvature within the frame. Use `assets/frame-size-reference.png` as the visual size reference for the main frame and all inset-panel borders; follow the normalized measurements in `references/composition.md`. Open this image and attach it to generation as a geometry-only reference. Do not copy its boy, fish, text, palette or background into unrelated subjects. Keep the outer black field clean and the central face/anatomy stable. Explicit user framing choices override these defaults.
+Default to a main scene frame over a uniform opaque black outer field, several purposeful foreground frame breaks, and mild fisheye/barrel curvature within the frame. Use `assets/frame-size-reference.png` as the visual size reference for the main frame border; follow the normalized measurements in `references/composition.md`. Open this image and attach it to generation as a geometry-only reference. Do not copy its boy, fish, text, palette or background into unrelated subjects. Keep the outer black field clean and the central face/anatomy stable. Explicit user framing choices override these defaults.
 
 Default setting: outer space. Unless the user names another setting or mood, stage the subject in a space scene — open deep space, low orbit above a planet, a station exterior or viewport, or a small planet's surface under a starry sky — and translate the subject's own world into it (a kitchen becomes a galley module, a street becomes a station corridor with a window to the stars). Keep it quiet: sparse stars, one soft nebula or aurora band, or one simplified planet, never a dense starfield. Prefer the space-compatible moods (深空极光, 跃迁霓虹, 金色漩涡); other moods still work when space stays visible.
 
@@ -49,7 +49,7 @@ Follow `composition.md` §2–§5:
 - Pick one value per variation axis. Fit the archetype to the subject (a dramatic pet → cut-in; an object → item-get; two people → split-screen; a portrait → main-menu or dialogue). If you already made images in this conversation, change at least two high-impact axes so outputs don't repeat.
 - Run the preflight checklist.
 
-For the default rich composition, select 4–5 unequal panels including 1–2 partial-feature close-ups. Use 3 for a tighter crop and at most 6 when space permits. Specify panel positions, overlaps and calm background regions using composition.md; do not copy the soccer example onto unrelated subjects.
+For the default composition, use one dominant hero with a small number of functional HUD elements. Do not add inset detail windows or partial-feature close-ups. Specify panel positions only for functional interface elements and calm background regions using composition.md.
 
 ### 4. Choose reference images
 
@@ -92,7 +92,7 @@ Image 1 is the subject to redraw (identity reference only — do not keep its ph
 <uniform opaque black outer field; main frame and panel border sizes matched to assets/frame-size-reference.png using composition.md measurements; 2–4 subject-relevant features crossing the frame across at least two sides; frame occluded behind them; mild inner-scene fisheye with stable central anatomy and readable text>
 
 [Enrichment & FX]
-<1–3 quiet world details; one localized FX family; 3–6 unequal overlapping panels including 1–2 partial-feature close-ups, each with a subject-relevant function; specify clean negative space and what stays visually subdued>
+<1–3 quiet world details; one localized FX family; functional HUD elements only, with no inset detail windows or partial-feature close-ups; specify clean negative space and what stays visually subdued>
 
 [Typography]
 <each text element: exact string in quotes, position, look from style-guide §3>
@@ -126,7 +126,7 @@ python3 SKILL_DIR/scripts/generate.py --prompt-file ./orbitals-art/<slug>.txt \
 
 ### 7. Check and deliver
 
-Open the result and compare it with the preflight checklist: is the hero recognisable through its anchors, is it clearly 80s cel anime (not a filtered photo), are unequal interface layers clearly overlapping, is the scene set in space (unless the user chose another setting), is the background calm rather than filled with stars/debris/architecture, is the image 4:3 (unless another ratio was requested), is the text legible, is the bottom dialogue Japanese unless the user requested otherwise, is the outer field uniformly black, do several foreground features visibly occlude the inset border, and is inner fisheye curvature mild with readable text and coherent anatomy?
+Open the result and compare it with the preflight checklist: is the hero recognisable through its anchors, is it clearly 80s cel anime (not a filtered photo), are functional HUD elements readable without detail-window enlargements, is the scene set in space (unless the user chose another setting), is the background calm rather than filled with stars/debris/architecture, is the image 4:3 (unless another ratio was requested), is the text legible, is the bottom dialogue Japanese unless the user requested otherwise, is the outer field uniformly black, do foreground features coherently occlude the main frame border, and is inner fisheye curvature mild with readable text and coherent anatomy?
 
 Then reply briefly (in the user's language) with:
 - the image path, and the image itself,
