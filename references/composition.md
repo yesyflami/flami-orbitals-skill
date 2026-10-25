@@ -22,7 +22,7 @@ Build the frame from back to front:
 | 2 | **Hero** | Exactly one hero composition — the user's subject, or the anchored group as one unit. Covers **55–75%** of the frame (never below 45% after overlaps). Placed off-centre. Never contained inside a small UI window. The main scene may use an inset frame, with foreground features breaking across its boundary. |
 | 3 | **World enrichment** | 1–3 restrained story details that extend the subject into the game world (see §2). Additional narrative information belongs in functional panels rather than extra floating props. Keep world details smaller and lower-contrast than the hero. |
 | 4 | **FX** | One localized FX family connected to the action. Default to a few purposeful trails or one restrained burst; do not combine all-over speed lines, floating debris, dust sprays and sparkles. |
-| 5 | **Functional HUD** | Use compact mission, status, map or button elements only. Do not add detail-window enlargements, portrait insets, or partial-feature cards. |
+| 5 | **Functional HUD** | Use compact mission, status, map or button elements only. |
 | 6 | **Typography & HUD** | 2–5 text elements from style-guide §3: exactly one *big type device* (chapter title / onomatopoeia / item title / logo), plus 1–4 small ones (dialogue subtitle, quest HUD, buttons, P1/P2 badges, counter). |
 | 7 | **Screen surface** | Grain, chromatic aberration, bloom, vignette; optional letterbox. |
 
@@ -61,11 +61,11 @@ Choose one. Each names a layout that actually appears in the game.
 
 ### Interface depth and background restraint
 
-- Default to 4–5 panels in an asymmetric L, staggered zigzag or counter-corner layout. Use a clear size hierarchy such as 1 large + 1 medium + 3 small, with different aspect ratios and 5–20% overlap at selected edges. Avoid equal tiles, rigid columns and uniformly separated cards.
+- Use a small number of functional HUD elements in an asymmetric layout, with different aspect ratios and 5–20% overlap at selected edges. Avoid equal tiles, rigid columns and uniformly separated cards.
 - Functional panels serve the subject: an action gauge, map, object readout or mission status, not arbitrary decoration. Compact labels and diagrams need not add more narrative text blocks.
-- Keep the hero unboxed and dominant, with face and defining action unobscured. Some panel edges can overlap the hero silhouette; a small prop may pass behind an edge. Use scale and occlusion for depth before adding foreground scenery.
+- Keep the hero unboxed and dominant, with face and defining action unobscured. Functional HUD edges may overlap the hero silhouette; a small prop may pass behind an edge. Use scale and occlusion for depth before adding foreground scenery.
 - Keep the background low contrast and low detail. Avoid dense stars, detailed planets, crowds, layered machinery, rubble, dust sprays and oversized foreground consoles by default. These may be used selectively if central to the user’s subject, never all together. Fine film grain must not become visible dirt or speckle clutter.
-- If the result is busy, simplify the background and FX first while retaining the useful window hierarchy. If flat, improve panel size differences, overlap and feature crops before adding objects.
+- If the result is busy, simplify the background and FX first while retaining the useful HUD hierarchy. If flat, improve the hero pose, silhouette, overlap and lighting before adding objects.
 - Adapt to each image: a pet may use paw/ear details and a route map; an object may use a material detail and a function readout. Do not automatically add a football field, shoe crop or charge gauge to every subject. The space setting is the default backdrop, but the panels and props still come from the subject.
 
 ### Inset frame, black surround and controlled fisheye
@@ -90,19 +90,19 @@ Pick one value per axis. If earlier images in this conversation used a value, ch
 | archetype | A chapter-card / B cut-in / C item-get / D split-screen / E main-menu / F dialogue |
 | mood | red-menu / aurora-space / overgrown-ruins / furnace / golden-vortex / warp-neon / control-room |
 | hero placement | left-third / right-third / low-rise (rising from bottom edge) / diagonal / over-shoulder |
-| crop | reaction close-up / bust / waist-up / full-body / object-hero |
+| crop | bust / waist-up / full-body / object-hero |
 | big type device | chapter title / onomatopoeia / item title / logo |
 | FX family | speed lines / radial burst / hyperspace streaks / neon beam / sparkle stars / floating debris / cel explosion |
 | inset count | 0 (no detail-window enlargements) |
 | small text set | dialogue only / dialogue + quest HUD / HUD + buttons + P1P2 / dialogue + counter |
-| frame | inset scene on black with foreground overflow (default); explicit full-bleed / letterbox / split-screen overrides |
+| frame | main scene on black with foreground overflow (default); explicit full-bleed / letterbox / split-screen overrides |
 
 ## 5. Compatibility rules
 
-- The default inset frame wraps any archetype; its internal letterbox or split seam can coexist with the black surround. The hero is unboxed relative to UI panels and can cross the scene border.
+- The default main frame wraps any archetype; its internal letterbox or split seam can coexist with the black surround. The hero is unboxed relative to the HUD and can cross the scene border.
 - Archetype fixes some axes: A → letterbox + chapter title; B → onomatopoeia + speed lines/neon beam; C → item title + radial burst; D → split-screen + quest HUD; E → logo + HUD/buttons/P1P2; F → dialogue + reaction close-up or bust.
 - Total text elements ≤ 5. Keep the frame uncluttered with functional HUD only.
-- Reaction close-up means the hero's main composition crop, never a separate detail window; full-body pairs with A, C, D, E.
+- Full-body pairs with A, C, D, E.
 - Hero coverage beats decoration: if layers crowd the hero, drop an enrichment element before shrinking the hero.
 - A group of subjects stays one hero composition — keep everyone, their left/right order and interaction; never merge or drop a person.
 
@@ -112,10 +112,10 @@ Before compiling the prompt, confirm:
 - [ ] one hero, 55–75%, off-centre, unboxed, face uncovered
 - [ ] 1–3 subdued world details; functional panels distributed across multiple quadrants
 - [ ] one FX family touching the hero
-- [ ] no detail-window enlargements or partial-feature inset cards
+- [ ] no secondary detail windows; functional HUD only
 - [ ] exactly one big type device; total text 2–5; every string short and quoted
 - [ ] 25–35% connected calm space; background and FX are visibly quieter than hero/UI
-- [ ] 3–6 unequal panels with purposeful overlap, including 1–2 distinct partial crops
+- [ ] functional HUD elements have purposeful overlap without crowding the hero
 - [ ] short natural Japanese bottom dialogue unless user wording/language overrides
 - [ ] uniform black surround and main-frame dimensions matching the bundled frame-size reference; 2–4 coherent frame breaks across multiple sides, outer safety margin preserved
 - [ ] mild inner fisheye, stable central anatomy, legible text, flat outer canvas
