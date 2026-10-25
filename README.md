@@ -8,7 +8,7 @@
 
 <p align="center">
   把一张示例图交给 Codex，生成你的专属游戏画面。<br>
-  自动重绘成《轨道双子星 / Orbitals》的 80 年代赛璐璐画风，并配上章节标题、对白字幕、任务 HUD 与特写小窗。
+  自动重绘成《轨道双子星 / Orbitals》的 80 年代赛璐璐画风，并配上章节标题、对白字幕与任务 HUD。
 </p>
 
 <p align="center">
@@ -35,7 +35,7 @@
 - **80 年代赛璐璐画风**：把主体重绘成《轨道双子星 / Orbitals》的老动画质感，不是给照片套滤镜。
 - **游戏界面元素**：章节标题、拟声词、对白字幕、任务 HUD、头像卡，按画面需要组合。
 - **干净的主体构图**：以完整人物和动态姿态为主，搭配少量功能性 HUD；不添加局部放大框或细节特写窗口。
-- **内框 + 纯黑外底**：主画面放在内框里，框外统一纯黑；画框和小窗口的尺寸、边框粗细参考 `assets/frame-size-reference.png`。
+- **内框 + 纯黑外底**：主画面放在内框里，框外统一纯黑；画框尺寸和边框粗细参考 `assets/frame-size-reference.png`。
 - **越框与鱼眼**：主体的一部分从不同方向越过并遮住边框，形成空间层次；框内带轻微鱼眼弯曲，人物和文字保持清晰。
 - **安静的背景**：低对比、少细节、留白充足，让主体和界面成为视觉重点。
 - **默认宇宙场景**：深空、行星轨道、空间站、小行星地表等，星空稀疏克制。
@@ -115,7 +115,7 @@ references/style-guide.md    画风 / 配色 / 字体 / 质感
 references/composition.md    构图层级、六种版式、变化规则
 assets/previews/             Before / After 效果预览
 assets/style-refs/           风格参考图（游戏截图，版权归原游戏所有，后续将替换为自制示例）
-assets/frame-size-reference.png  画框与小窗口的尺寸参考图
+assets/frame-size-reference.png  画框尺寸参考图
 scripts/generate.py          OpenAI 出图脚本
 agents/openai.yaml           Codex 界面元数据
 ```
